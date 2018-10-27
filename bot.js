@@ -6,7 +6,7 @@ client.on('ready', () => {
   client.user.setActivity("canarado sleep O_o", {type: "WATCHING"});
 });
 
-client.on('message', msg => {
+client.on('message', async msg => {
   if (msg.content === 'ping') {
     msg.reply('Pong!');
   }
