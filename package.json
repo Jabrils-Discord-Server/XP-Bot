@@ -1,0 +1,32 @@
+{
+	"name":"XP-Bot",
+	"version":"0.1.0",
+	"description":"",
+	"homepage":"",
+	"author":"",
+	"files":[
+		"node_modules"
+	],
+	"main":"bot.js",
+	"keywords":[
+	],
+	"scripts":{
+		"bot":"node ./bot.js"
+	},
+	"devDependencies":{
+	},
+	"repository":{
+		"type":"git",
+		"url":""
+	},
+	"license":"Apache-2.0",
+	"dependencies":{
+		"discord.js":"^11.0.0"
+	},
+	"bugs":{
+		"url":""
+	},
+	"engines":{
+		"node": "7.6.0"
+	}
+}
