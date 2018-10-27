@@ -8,7 +8,9 @@
 		"node_modules"
 	],
 	"main":"bot.js",
-	"keywords":[
+	"keywords":["node",
+		    "heroku",
+		    "discord"
 	],
 	"scripts":{
 		"bot":"node ./bot.js"
