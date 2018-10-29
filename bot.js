@@ -4,6 +4,10 @@ const client = new Discord.Client();
 const prefix = '!xp';
 var embed_color = 0xadc7ff;
 
+//rework for command and arguments, review it i guess
+//const args = message.content.slice(prefix.length).trim().split(/ +/g);
+//const command = args.shift().toLowerCase();
+
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
