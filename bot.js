@@ -1,42 +1,50 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const config = require("./config.json")
+const Discord = require("discord.js");
+const fs = require("fs");
+const client = new Discord.Client({disableEveryone: true});
+client.commands = new Discord.Collection();
 
-const prefix = '!xp';
-var embed_color = 0xadc7ff;
+module.exports ={
+  embed_color: config.embed_color_default
+}
 
-//rework for command and arguments, review it i guess
-//const args = message.content.slice(prefix.length).trim().split(/ +/g);
-//const command = args.shift().toLowerCase();
+fs.readdir("./commands/", (err, files) => {
 
+  if(err) console.log(err);
+  let jsfile = files.filter(f => f.split(".").pop() === "js");
+  if(jsfile.length <= 0){
+    console.log("Couldn't find commands.");
+    return;
+  }
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setPresence({ game: { name: 'the world burn', type: 'WATCHING' }, status: 'idle' })
-  client.user.setAvatar('https://d1u5p3l4wpay3k.cloudfront.net/minecraft_gamepedia/3/38/Experience_Orb.gif');
+  jsfile.forEach((f, i) =>{
+    let props = require(`./commands/${f}`);
+    console.log(`${f} loaded!`);
+    client.commands.set(props.help.name, props);
+  });
 });
 
-client.on('message', async msg => {
-  if(msg.content.split(/\s+/)[0] != prefix) return;
-  let command = msg.content.split(/\s+/)[1];
-  let command_attribute = msg.content.split(/\s+/)[2];
-  if (command == 'ping') {
-    msg.reply('Pong!');
-  }
-  if (command == 'embed_color') {
-    if(command_attribute.includes('#')) embed_color = command_attribute.replace('#', '');
-    else embed_color = command_attribute;
-    msg.reply('changed embed color to ' + command_attribute.replace('#', ''));
-  }
-  if (command == 'help' || command == '?' || command == '-h') {
-     let embed = new Discord.RichEmbed()
-     .setTitle('XP-Bot - Commands:')
-     .setColor(embed_color)
-     .addField("Current prefix is " + prefix)
-     .setDescription('`' + prefix + ' help`  displays this message\n'
-                   + '`' + prefix + ' status`  shows your verification status');
-      
-     msg.channel.send(embed);
-  }
+client.on("ready", async () => {
+
+  client.user.setPresence({ game: { name: 'bullshit', type: 'WATCHING' }, status: 'idle' })
+
 });
+
+client.on("message", async msg => {
+  if(msg.author.bot) return;
+  if(msg.channel.type === "dm") return;
+
+
+  let prefix = config.prefix;
+  let messageArray = msg.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+
+  let commandfile = client.commands.get(cmd.slice(prefix.length));
+  if(commandfile) commandfile.run(client,msg,args);
+
+
+});
+
 
 client.login(process.env.TOKEN);
