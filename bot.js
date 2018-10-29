@@ -14,7 +14,7 @@ client.on('message', async msg => {
     msg.reply('Pong!');
   }
   if (msg.content.includes('help') || msg.content.includes('-h') || msg.content.includes('?')) {
-     const embed = new RichEmbed()
+     const embed = new Discord.RichEmbed()
      .setTitle('A slick little embed')
      .setColor(0xFF0000)
      .setDescription('Hello, this is a slick embed!');
