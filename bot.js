@@ -7,7 +7,7 @@ client.on('ready', () => {
 });
 
 client.on('message', async msg => {
-  if (msg.content === 'ping') {
+  if (msg.content === '!xp ping') {
     msg.reply('Pong!');
   }
 });
