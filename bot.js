@@ -10,7 +10,7 @@ client.on('ready', () => {
 
 client.on('message', async msg => {
   if (!msg.content.includes(prefix)) return;
-  if (msg.content == 'ping') {
+  if (msg.content.includes('ping')) {
     msg.reply('Pong!');
   }
 });
