@@ -19,7 +19,8 @@ client.on('message', async msg => {
      let embed = new Discord.RichEmbed()
      .setTitle('XP-Bot - Help:')
      .setColor(embed_color)
-     .setDescription('`' + prefix + ' help` displays this message');
+     .setDescription('`' + prefix + ' help`:  displays this message\n'
+                   + '`' + prefix + ' status`:  shows your verification status');
       
      msg.channel.send(embed);
   }
