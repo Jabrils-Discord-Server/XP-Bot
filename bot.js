@@ -13,6 +13,12 @@ client.on('message', async msg => {
   if (msg.content.includes('ping')) {
     msg.reply('Pong!');
   }
+  if (msg.content.includes('help') || msg.content.includes('-h') || msg.content.includes('?')) {
+    msg.send({embed: {
+      color: 3447003,
+      description: "XP-Bot Help:\n\n`" + prefix + " help` - displays this message"
+    }});
+  }
 });
 
 client.login(process.env.TOKEN);
