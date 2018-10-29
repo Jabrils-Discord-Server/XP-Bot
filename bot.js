@@ -25,7 +25,7 @@ client.on('message', async msg => {
   if (command == 'embed_color') {
     if(command_attribute.includes('#')) embed_color = command_attribute.replace('#', '');
     else embed_color = command_attribute;
-    msg.reply('Changed embed color to ' + command_attribute.replace('#', ''));
+    msg.reply('changed embed color to ' + command_attribute.replace('#', ''));
   }
   if (command == 'help' || command == '?' || command == '-h') {
      let embed = new Discord.RichEmbed()
