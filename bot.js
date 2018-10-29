@@ -8,7 +8,6 @@ let embed_color = 0xadc7ff;
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setActivity("canarado sleep O_o", {type: "WATCHING"});
-  client.user.setAvatar('https://media.forgecdn.net/avatars/82/562/636181987634577193.png');
 });
 
 client.on('message', async msg => {
