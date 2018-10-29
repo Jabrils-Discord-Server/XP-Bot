@@ -14,10 +14,9 @@ client.on('message', async msg => {
     msg.reply('Pong!');
   }
   if (msg.content.includes('help') || msg.content.includes('-h') || msg.content.includes('?')) {
-    message.channel.send({embed: {
-      color: 3447003,
-      description: "XP-Bot Help:\n\n`" + prefix + " help` - displays this message"
-    }});
+    if (msg.content.includes('ping')) {
+      msg.reply('XP-Bot Help:\n\n`' + prefix + ' help` - displays this message');
+    }
   }
 });
 
