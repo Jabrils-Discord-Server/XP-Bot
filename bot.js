@@ -34,8 +34,6 @@ client.on("message", async msg => {
   if(msg.author.bot) return;
   if(msg.channel.type === "dm") return;
   
-  msg.channel.send("what a minute");
-  
   let prefix = config.prefix;
   let messageArray = msg.content.split(" ");
   let cmd = messageArray[0];
