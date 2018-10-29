@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const prefix = '!xp';
+var embed_color = 0xadc7ff;
+
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -14,12 +16,12 @@ client.on('message', async msg => {
     msg.reply('Pong!');
   }
   if (msg.content.includes('help') || msg.content.includes('-h') || msg.content.includes('?')) {
-     let embed = new Discord.RichEmbed() //const is wrong dummy
-     .setTitle('A slick little embed')
-     .setColor(0xFF0000)
-     .setDescription('Hello, this is a slick embed!');
+     const embed = new Discord.RichEmbed()
+     .setTitle('XP-Bot - Help:')
+     .setColor(embed_color)
+     .setDescription('`' + prefix + ' help` displays this message');
       
-     msg.channel.send(embed);
+     msg.reply(embed);
   }
 });
 
