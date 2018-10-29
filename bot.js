@@ -14,7 +14,7 @@ client.on('message', async msg => {
     msg.reply('Pong!');
   }
   if (msg.content.includes('help') || msg.content.includes('-h') || msg.content.includes('?')) {
-    msg.send({embed: {
+    message.channel.send({embed: {
       color: 3447003,
       description: "XP-Bot Help:\n\n`" + prefix + " help` - displays this message"
     }});
