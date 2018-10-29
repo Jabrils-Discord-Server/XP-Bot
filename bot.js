@@ -23,8 +23,14 @@ client.on('message', async msg => {
     msg.reply('Pong!');
   }
   if (command == 'embed_color') {
-    embed_color = "0x" + command_attribute;
-    msg.reply('Changed embed color to ' + command_attribute.replace('#', ''));
+    if(command_attribute === undefined || command_attribute == 'reset') {
+      embed_color = "0xadc7ff";
+      msg.reply('reset embed color back to 0xadc7ff'));
+    }
+    else {
+      embed_color = "0x" + command_attribute;
+      msg.reply('changed embed color to 0x' + command_attribute.replace('#', ''));
+    }
   }
   if (command == 'help' || command == '?' || command == '-h') {
      let embed = new Discord.RichEmbed()
