@@ -14,9 +14,12 @@ client.on('message', async msg => {
     msg.reply('Pong!');
   }
   if (msg.content.includes('help') || msg.content.includes('-h') || msg.content.includes('?')) {
-    if (msg.content.includes('ping')) {
-      msg.reply('XP-Bot Help:\n\n`' + prefix + ' help` - displays this message');
-    }
+     const embed = new RichEmbed()
+     .setTitle('A slick little embed')
+     .setColor(0xFF0000)
+     .setDescription('Hello, this is a slick embed!');
+      
+     message.channel.send(embed);
   }
 });
 
