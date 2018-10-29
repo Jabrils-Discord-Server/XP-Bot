@@ -9,7 +9,7 @@ module.exports ={
 
 client.on("ready", async () => {
 
-  client.user.setPresence({ game: { name: 'you', type: 'WATCHING' }, status: 'online' })
+  client.user.setPresence({ game: { name: 'huh', type: 'WATCHING' }, status: 'online' })
 
 });
 
