@@ -19,27 +19,33 @@ client.on('message', async msg => {
   if(msg.content.split(/\s+/)[0] != prefix) return;
   let command = msg.content.split(/\s+/)[1];
   let command_attribute = msg.content.split(/\s+/)[2];
-  if (command == 'ping') {
-    msg.reply('Pong!');
-  }
-  if (command == 'embed_color') {
-    if(command_attribute === undefined || command_attribute == 'reset') {
-      embed_color = "0xadc7ff";
-      msg.reply('reset embed color back to 0xadc7ff'));
+  
+  try {
+    if (command == 'ping') {
+      msg.reply('Pong!');
     }
-    else {
-      embed_color = "0x" + command_attribute;
-      msg.reply('changed embed color to 0x' + command_attribute.replace('#', ''));
+    if (command == 'embed_color') {
+      if(command_attribute === undefined || command_attribute == 'reset') {
+        embed_color = "0xadc7ff";
+        msg.reply('reset embed color back to 0xadc7ff'));
+      } 
+      else {
+        embed_color = "0x" + command_attribute;
+        msg.reply('changed embed color to 0x' + command_attribute.replace('#', ''));
+      }
     }
-  }
-  if (command == 'help' || command == '?' || command == '-h') {
-     let embed = new Discord.RichEmbed()
-     .setTitle('XP-Bot - Commands:')
-     .setColor(embed_color)
-     .setDescription('`' + prefix + ' help`  displays this message\n'
-                   + '`' + prefix + ' status`  shows your verification status');
+    if (command == 'help' || command == '?' || command == '-h') {
+      let embed = new Discord.RichEmbed()
+      .setTitle('XP-Bot - Commands:')
+      .setColor(embed_color)
+      .setDescription('`' + prefix + ' help`  displays this message\n'
+                    + '`' + prefix + ' status`  shows your verification status');
       
-     msg.channel.send(embed);
+      msg.channel.send(embed);
+    }
+  }
+  catch(err) {
+    msg.channel.send("Error: " + err);
   }
 });
 
