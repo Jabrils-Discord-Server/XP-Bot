@@ -7,7 +7,7 @@ let embed_color = 0xadc7ff;
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setActivity("canarado sleep O_o", {type: "WATCHING"});
+  client.user.setPresence({ game: { name: 'the world burn', type: 'WATCHING' }, status: 'idle' })
   client.user.setAvatar('https://d1u5p3l4wpay3k.cloudfront.net/minecraft_gamepedia/3/38/Experience_Orb.gif');
 });
 
