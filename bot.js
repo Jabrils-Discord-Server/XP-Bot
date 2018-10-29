@@ -19,7 +19,7 @@ client.on('message', async msg => {
      .setColor(0xFF0000)
      .setDescription('Hello, this is a slick embed!');
       
-     message.channel.send(embed);
+     msg.channel.send(embed);
   }
 });
 
