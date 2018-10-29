@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const prefix = '!xp';
-let embed_color = 0xadc7ff;
+var embed_color = 0xadc7ff;
 
 
 client.on('ready', () => {
@@ -14,8 +14,13 @@ client.on('ready', () => {
 client.on('message', async msg => {
   if(msg.content.split(/\s+/)[0] != prefix) return;
   let command = msg.content.split(/\s+/)[1];
+  let command_attribute = msg.content.split(/\s+/)[2];
   if (command == 'ping') {
     msg.reply('Pong!');
+  }
+  if (command == 'embed_color') {
+    embed_color = "0x" + command_attribute;
+    msg.reply('Changed embed color to ' + command_attribute.replace('#', ''));
   }
   if (command == 'help' || command == '?' || command == '-h') {
      let embed = new Discord.RichEmbed()
