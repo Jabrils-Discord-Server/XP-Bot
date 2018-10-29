@@ -31,7 +31,7 @@ client.on('message', async msg => {
      let embed = new Discord.RichEmbed()
      .setTitle('XP-Bot - Commands:')
      .setColor(embed_color)
-     .addField("Current prefix is ${prefix}")
+     .addField("Current prefix is " + prefix)
      .setDescription('`' + prefix + ' help`  displays this message\n'
                    + '`' + prefix + ' status`  shows your verification status');
       
