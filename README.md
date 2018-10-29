@@ -1,5 +1,4 @@
-# XP-Bot - Version 0.1.0
-## [Feature Overview](https://jabrils-discord-server.github.io/XP-Bot/)
+# XP-Bot - Version 0.1.0  -  [Feature Overview](https://jabrils-discord-server.github.io/XP-Bot/)
 A Discord bot coded in [Node.js](https://github.com/nodejs/node) using the [Discord.js](https://github.com/discordjs/discord.js) Library. 
 
 ### Want to see the bot in action?
