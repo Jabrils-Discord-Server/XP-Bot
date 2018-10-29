@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const prefix = '!xp';
-var embed_color = 0xadc7ff;
+let embed_color = 0xadc7ff;
 
 
 client.on('ready', () => {
@@ -16,12 +16,12 @@ client.on('message', async msg => {
     msg.reply('Pong!');
   }
   if (msg.content.includes('help') || msg.content.includes('-h') || msg.content.includes('?')) {
-     const embed = new Discord.RichEmbed()
+     let embed = new Discord.RichEmbed()
      .setTitle('XP-Bot - Help:')
      .setColor(embed_color)
      .setDescription('`' + prefix + ' help` displays this message');
       
-     msg.reply(embed);
+     msg.channel.send(embed);
   }
 });
 
