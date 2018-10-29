@@ -13,10 +13,11 @@ client.on('ready', () => {
 
 client.on('message', async msg => {
   if(msg.content.split(/\s+/)[0] != prefix) return;
-  if (msg.content.split(/\s+/)[1] == 'ping') {
+  let command = msg.content.split(/\s+/)[1];
+  if (command == 'ping') {
     msg.reply('Pong!');
   }
-  if (msg.content.split(/\s+/)[1] == 'help' || msg.content.split(/\s+/)[1] == '?' || msg.content.split(/\s+/)[1] == '-h') {
+  if (command == 'help' || command == '?' || command == '-h') {
      let embed = new Discord.RichEmbed()
      .setTitle('XP-Bot - Commands:')
      .setColor(embed_color)
