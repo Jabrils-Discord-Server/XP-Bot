@@ -1,5 +1,6 @@
 const config = require("./config.json")
 const Discord = require("discord.js");
+const fs = require("fs");
 const client = new Discord.Client({disableEveryone: true});
 client.commands = new Discord.Collection();
 
