@@ -38,7 +38,7 @@ client.on("message", async msg => {
   let args = messageArray.slice(1);
   
   msg.channel.send(args);
-  let commandfile = client.commands.get(cmd.slice(prefix.length));
+  let commandfile = client.commands.get(cmd.slice(prefix.length+1));
   if(commandfile) commandfile.run(client,msg,args);
 
 
