@@ -37,9 +37,8 @@ client.on("message", async msg => {
   let prefix = config.prefix;
   let messageArray = msg.content.split(" ");
   let cmd = messageArray[0];
-  let args = messageArray.slice(1);
+  let args = messageArray.slice(0);
 
-  
   let commandfile = client.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(client,msg,args);
 
