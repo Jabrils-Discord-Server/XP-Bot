@@ -45,7 +45,7 @@ client.on("message", async msg => {
   if(msg.author.id === '428678912558628865') msg.react(":mock:");
     
   if(msg.content.toLowerCase().includes("indede")){
-      msg.react(client.emojis.find(emoji => emoji.name === "regional_indicator_i"));
+      msg.react("509133104653271064");
   }
   }
   catch(error) {
