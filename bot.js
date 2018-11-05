@@ -30,8 +30,8 @@ client.on("ready", async () => {
 
 client.on("message", async msg => {
   try {
-  if(msg.author.bot) return;
-  if(msg.channel.type === "dm") return;
+  if(msg.author.bot) return false;
+  if(msg.channel.type === "dm") return false;
   
   let prefix = config.prefix;
   let messageArray = msg.content.split(" ");
@@ -54,8 +54,11 @@ client.on("message", async msg => {
       }
       catch(error2) {
           console.log("Error in error catcher ffs: " + error2);
+          return false;
       }
+      return false;
   }
+  return true;
 });
 
 
