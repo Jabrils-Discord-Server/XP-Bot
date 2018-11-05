@@ -42,7 +42,8 @@ client.on("message", async msg => {
   let commandfile = client.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(client,msg,args);
 
-  
+  if(message.author.id === '428678912558628865') msg.react(":mock:");
+    
   if(msg.content.toLowerCase().includes("indede")){
       msg.react(":regional_indicator_i:");
       msg.react(":regional_indicator_n:");
