@@ -45,12 +45,7 @@ client.on("message", async msg => {
   if(msg.author.id === '428678912558628865') msg.react(":mock:");
     
   if(msg.content.toLowerCase().includes("indede")){
-      msg.react("🇮");
-      msg.react("🇳");
-      msg.react("🇩");
-      msg.react("🇪");
-      msg.react("<:D_:509131917304659968>");
-      msg.react("<:E_:509131411882639381>");
+      msg.react("🇮").then(()=>msg.react("🇳").then(()=>msg.react("🇩").then(()=>msg.react("🇪").then(()=>msg.react("<:D_:509131917304659968>").then(()=>msg.react("<:E_:509131411882639381>"))))));
   }
   }
   catch(error) {
