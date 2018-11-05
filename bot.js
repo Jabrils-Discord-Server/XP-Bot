@@ -43,7 +43,7 @@ client.on("message", async msg => {
   if(commandfile) commandfile.run(client,msg,args);
 
   
-  if(msg.content.includes("indede")) msg.react("👍");
+  if(msg.content.toLowerCase().includes("indede")) msg.react("👍");
   }
   catch(error) {
       try {
