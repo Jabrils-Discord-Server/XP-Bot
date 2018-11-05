@@ -43,7 +43,7 @@ client.on("message", async msg => {
   if(commandfile) commandfile.run(client,msg,args);
 
   
-  //if(msg.includes("indede")) msg.react("👍");
+  if(msg.channel.includes("indede")) msg.react("👍");
   }
   catch(error) {
       try {
