@@ -46,6 +46,11 @@ client.on("message", async msg => {
     
   if(msg.content.toLowerCase().includes("indede")){
       msg.react("🇮");
+      msg.react("🇳");
+      msg.react("🇩");
+      msg.react("🇪");
+      msg.react("<:D_:509131917304659968>");
+      msg.react("<:E_:509131411882639381>");
   }
   }
   catch(error) {
