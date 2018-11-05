@@ -43,7 +43,7 @@ client.on("message", async msg => {
   if(commandfile) commandfile.run(client,msg,args);
 
   
-  if(msg.includes("indede")) msg.react(":can_we_hit_15000_likes:");
+  if(msg.includes("indede")) msg.react("👍");
   }
   catch(error) {
       console.log("Encountered error: " + error);
