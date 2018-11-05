@@ -46,7 +46,12 @@ client.on("message", async msg => {
   if(msg.includes("indede")) msg.react("👍");
   }
   catch(error) {
-      console.log("Encountered error: " + error);
+      try {
+          msg.reply("Encountered error: " + error);
+      }
+      catch(error2) {
+          console.log("Error in error catcher ffs: " + error2);
+      }
   }
 });
 
