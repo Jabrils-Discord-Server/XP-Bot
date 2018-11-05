@@ -29,6 +29,7 @@ client.on("ready", async () => {
 });
 
 client.on("message", async msg => {
+  try {
   if(msg.author.bot) return;
   if(msg.channel.type === "dm") return;
   
@@ -41,7 +42,12 @@ client.on("message", async msg => {
   let commandfile = client.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(client,msg,args);
 
-
+  
+  if(msg.includes("indede")) msg.react(":can_we_hit_15000_likes:");
+  }
+  catch(error) {
+      console.log("Encountered error: " + error);
+  }
 });
 
 
