@@ -39,7 +39,7 @@ client.on("message", async msg => {
   let args = messageArray.slice(1);
   
 
-  let commandfile = client.commands.get(cmd.slice(prefix.length));
+  let commandfile = client.commands.get(cmd.slice(prefix));
   if(commandfile) commandfile.run(client,msg,args);
 
   if(msg.author.id === '428678912558628865') msg.react(":mock:");
