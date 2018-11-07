@@ -43,7 +43,7 @@ client.on("message", async msg => {
       if(commandfile) commandfile.run(client,msg,args);
     
       react(msg);
-      sv443s_way_better_command_handler(msg);
+      sv443s_way_better_command_handler(msg.content);
   
   }
   catch(error) {
