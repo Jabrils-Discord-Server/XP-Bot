@@ -86,6 +86,7 @@ try {
             let msgarr = msgc.split(" ");
             msgarr.shift();msgarr.shift();msgarr.shift();msgarr.join();
             client.user.setPresence({game:{name:msgarr,type:msgc.split(" ")[2].toUpperCase()},status:"online"});
+            msg.reply("I set my status to '" + msgc.split(" ")[2].toUpperCase() + "' with content '" + msgarr + "'");
         }
     }
 }
