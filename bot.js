@@ -79,6 +79,7 @@ function react(msg) {
 }
 
 function sv443s_way_better_command_handler(msg) {
+try {
     if(msg.split(" ")[0] == "?xp") {
         if(msg.split(" ")[1] == "status"){
             let msgarr = msg.split(" ");
@@ -86,4 +87,8 @@ function sv443s_way_better_command_handler(msg) {
             client.user.setPresence({game:{name:msgarr,type:msg.split(" ")[2].toUpperCase()}});
         }
     }
+}
+catch(err) {
+    msg.reply("Error in Sv443's way better command handler: " + err);
+}
 }
