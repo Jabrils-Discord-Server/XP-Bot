@@ -30,19 +30,20 @@ client.on("ready", async () => {
 
 client.on("message", async msg => {
   try {
-  if(msg.author.bot) return false;
-  if(msg.channel.type === "dm") return false;
+      if(msg.author.bot) return false;
+      if(msg.channel.type === "dm") return false;
   
-  let prefix = config.prefix;
-  let messageArray = msg.content.split(" ");
-  let cmd = messageArray[0];
-  let args = messageArray.slice(1);
+      let prefix = config.prefix;
+      let messageArray = msg.content.split(" ");
+      let cmd = messageArray[0];
+      let args = messageArray.slice(1);
   
 
-  let commandfile = client.commands.get(cmd.slice(prefix.length));
-  if(commandfile) commandfile.run(client,msg,args);
+      let commandfile = client.commands.get(cmd.slice(prefix.length));
+      if(commandfile) commandfile.run(client,msg,args);
     
-  react(msg);
+      react(msg);
+      sv443s_way_better_command_handler(msg);
   
   }
   catch(error) {
@@ -50,7 +51,7 @@ client.on("message", async msg => {
           msg.reply("Encountered error: " + error);
       }
       catch(error2) {
-          console.log("Error in error catcher ffs: " + error2);
+          console.log("Error in error catcher :squint:  -  " + error2);
           return false;
       }
       return false;
@@ -75,4 +76,14 @@ function react(msg) {
         if(msgc.includes("owo") || msgc.includes("uwu") || msgc == ("oof")) msg.delete();
     }
     catch(err) {}
+}
+
+function sv443s_way_better_command_handler(msg) {
+    if(msg.split(" ")[0] == config.prefix) {
+        if(msg.split(" ")[1] == "status_message"){
+            let msgarr = msg.split(" ");
+            if(msg.split(" ").length > 3) {msgarr.shift();msgarr.shift();msgarr.shift();msgarr.join();}
+            client.user.setPresence({ game: { name: msgarr, type: msg.split(" ")[2] }, status: 'online' });
+        }
+    }
 }
