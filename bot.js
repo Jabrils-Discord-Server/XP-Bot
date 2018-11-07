@@ -43,7 +43,7 @@ client.on("message", async msg => {
       if(commandfile) commandfile.run(client,msg,args);
     
       react(msg);
-      sv443s_way_better_command_handler(msg.content);
+      sv443s_way_better_command_handler(msg);
   
   }
   catch(error) {
@@ -80,6 +80,7 @@ function react(msg) {
 
 function sv443s_way_better_command_handler(msg) {
 try {
+    msg = msg.content;
     if(msg.split(" ")[0] == "?xp") {
         if(msg.split(" ")[1] == "status"){
             let msgarr = msg.split(" ");
