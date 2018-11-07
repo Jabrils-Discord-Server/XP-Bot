@@ -24,7 +24,7 @@ fs.readdir("./commands/", (err, files) => {
 
 client.on("ready", async () => {
 
-  client.user.setPresence({ game: { name: 'your mother shower', type: 'WATCHING' }, status: 'idle' })
+  client.user.setPresence({ game: { name: 'your mother shower', type: 'WATCHING' }, status: 'online' })
 
 });
 
