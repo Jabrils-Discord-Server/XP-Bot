@@ -47,6 +47,9 @@ client.on("message", async msg => {
   if(msg.content.toLowerCase().includes("indede")){
       msg.react("🇮").then(()=>msg.react("🇳").then(()=>msg.react("🇩").then(()=>msg.react("🇪").then(()=>msg.react("509131917304659968").then(()=>msg.react("509131411882639381"))))));
   }
+  if(msg.content.toLowerCase().includes("cough")){
+      msg.react("492785060869832706");
+  }
   }
   catch(error) {
       try {
