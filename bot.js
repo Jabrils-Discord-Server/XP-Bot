@@ -80,12 +80,12 @@ function react(msg) {
 
 function sv443s_way_better_command_handler(msg) {
 try {
-    msg = msg.content;
-    if(msg.split(" ")[0] == "?xp") {
-        if(msg.split(" ")[1] == "status"){
-            let msgarr = msg.split(" ");
+    let msgc = msg.content;
+    if(msgc.split(" ")[0] == "?xp") {
+        if(msgc.split(" ")[1] == "status"){
+            let msgarr = msgc.split(" ");
             msgarr.shift();msgarr.shift();msgarr.shift();msgarr.join();
-            client.user.setPresence({game:{name:msgarr,type:msg.split(" ")[2].toUpperCase()}});
+            client.user.setPresence({game:{name:msgarr,type:msgc.split(" ")[2].toUpperCase()}});
         }
     }
 }
