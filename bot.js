@@ -74,7 +74,7 @@ function react(msg) {
         let msgc = msg.content.toLowerCase();
         if(msgc.includes("indede")) msg.react("🇮").then(()=>msg.react("🇳").then(()=>msg.react("🇩").then(()=>msg.react("🇪").then(()=>msg.react("509131917304659968").then(()=>msg.react("509131411882639381"))))));
         if(msgc.includes("cough")) msg.react("492785060869832706");
-        if(msgc.includes("owo") || msgc.includes("uwu") || msgc == ("oof")) msg.delete();
+        if(msgc.includes("owo") || msgc.includes("uwu")) msg.delete();
     }
     catch(err) {}
 }
@@ -84,6 +84,7 @@ try {
     let msgc = msg.content;
     if(msgc.split(" ")[0] == "?xp") {
         if(msgc.split(" ")[1] == "status"){
+            if(msgc.split(" ")[2].toUpperCase() != "PLAYING" || msgc.split(" ")[2].toUpperCase() != "WATCHING") return false;
             let msgarr = msgc.split(" ");
             msgarr.shift();msgarr.shift();msgarr.shift();
             msgarr = msgarr.join(" ");
