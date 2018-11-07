@@ -89,7 +89,7 @@ try {
             msgarr.shift();msgarr.shift();msgarr.shift();
             msgarr = msgarr.join(" ");
             client.user.setActivity(msgarr, { type: msgc.split(" ")[2].toUpperCase() });
-            msg.reply("I set my status to '" + msgc.split(" ")[2].toUpperCase() + "' with content '" + msgarr + "'");
+            msg.reply("I set my status to '" + msgc.split(" ")[2].toUpperCase() + " " + msgarr + "'");
         }
     }
 }
