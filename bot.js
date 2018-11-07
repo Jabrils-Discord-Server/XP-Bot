@@ -24,7 +24,7 @@ fs.readdir("./commands/", (err, files) => {
 
 client.on("ready", async () => {
 
-  client.user.setPresence({ game: { name: 'over you ♥', type: 'WATCHING' }, status: 'online' })
+  client.user.setPresence({ game: { name: 'over you ♥', type: 'WATCHING' }, status: 'online' });
 
 });
 
@@ -85,7 +85,7 @@ try {
         if(msgc.split(" ")[1] == "status"){
             let msgarr = msgc.split(" ");
             msgarr.shift();msgarr.shift();msgarr.shift();msgarr.join(" ");
-            client.user.setPresence({game:{name:msgarr,type:msgc.split(" ")[2].toUpperCase()},status:"online"});
+            client.user.setActivity(msgarr, { type: msgc.split(" ")[2].toUpperCase() });
             msg.reply("I set my status to '" + msgc.split(" ")[2].toUpperCase() + "' with content '" + msgarr + "'");
         }
     }
