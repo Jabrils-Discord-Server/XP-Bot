@@ -41,8 +41,6 @@ client.on("message", async msg => {
 
   let commandfile = client.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(client,msg,args);
-
-  if(msg.author.id === '428678912558628865') msg.react(":mock:");
     
   react(msg);
   
@@ -71,7 +69,7 @@ client.login(process.env.TOKEN);
 
 function react(msg) {
     try {
-        var msgc = msg.content.toLowerCase();
+        let msgc = msg.content.toLowerCase();
         if(msgc.includes("indede")) msg.react("🇮").then(()=>msg.react("🇳").then(()=>msg.react("🇩").then(()=>msg.react("🇪").then(()=>msg.react("509131917304659968").then(()=>msg.react("509131411882639381"))))));
         if(msgc.includes("cough")) msg.react("492785060869832706");
         if(msgc.includes("owo") || msgc.includes("uwu") || msgc == ("oof")) msg.delete();
