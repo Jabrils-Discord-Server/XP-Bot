@@ -85,7 +85,7 @@ try {
     if(msgc.split(" ")[0] == "?xp") {
         if(msgc.split(" ")[1] == "status"){
             let msgarr = msgc.split(" ");
-            msgarr.shift().shift().shift();
+            msgarr.shift(3);
             msgarr.join(" ");
             client.user.setActivity(msgarr, { type: msgc.split(" ")[2].toUpperCase() });
             msg.reply("I set my status to '" + msgc.split(" ")[2].toUpperCase() + "' with content '" + msgarr + "'");
