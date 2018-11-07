@@ -44,12 +44,8 @@ client.on("message", async msg => {
 
   if(msg.author.id === '428678912558628865') msg.react(":mock:");
     
-  if(msg.content.toLowerCase().includes("indede")){
-      msg.react("🇮").then(()=>msg.react("🇳").then(()=>msg.react("🇩").then(()=>msg.react("🇪").then(()=>msg.react("509131917304659968").then(()=>msg.react("509131411882639381"))))));
-  }
-  if(msg.content.toLowerCase().includes("cough")){
-      msg.react("492785060869832706");
-  }
+  react();
+  
   }
   catch(error) {
       try {
@@ -67,3 +63,13 @@ client.on("message", async msg => {
 
 
 client.login(process.env.TOKEN);
+
+
+
+
+
+
+function react() {
+    if(msg.content.toLowerCase().includes("indede")) msg.react("🇮").then(()=>msg.react("🇳").then(()=>msg.react("🇩").then(()=>msg.react("🇪").then(()=>msg.react("509131917304659968").then(()=>msg.react("509131411882639381"))))));
+    if(msg.content.toLowerCase().includes("cough")) msg.react("492785060869832706");
+}
