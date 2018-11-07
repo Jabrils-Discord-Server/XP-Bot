@@ -79,11 +79,11 @@ function react(msg) {
 }
 
 function sv443s_way_better_command_handler(msg) {
-    if(msg.split(" ")[0] == config.prefix) {
-        if(msg.split(" ")[1] == "status_message"){
+    if(msg.split(" ")[0] == "?xp") {
+        if(msg.split(" ")[1] == "status"){
             let msgarr = msg.split(" ");
-            if(msg.split(" ").length > 3) {msgarr.shift();msgarr.shift();msgarr.shift();msgarr.join();}
-            client.user.setPresence({ game: { name: msgarr, type: msg.split(" ")[2] }, status: 'online' });
+            msgarr.shift();msgarr.shift();msgarr.shift();msgarr.join();
+            client.user.setPresence({game:{name:msgarr,type:msg.split(" ")[2].toUpperCase()}});
         }
     }
 }
