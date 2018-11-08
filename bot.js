@@ -101,7 +101,7 @@ catch(err) {
 
 function includes_owo(msgc) {
     try {
-        let owolist = ["owo", "uwu", "ywy", "0w0"];
+        let owolist = ["owo", "uwu", "ywy", "0w0", "3w3"];
         for(let i = 0; i < owolist.length; i++) if(msgc.includes("owo") || msgc.includes("uwu")) return true;
         else return false;
     }
