@@ -41,7 +41,7 @@ client.on("message", async msg => {
   
 
       let commandfile = client.commands.get(cmd.slice(prefix.length));
-      if(commandfile) commandfile.run(client,msg,args);
+      if(commandfile && cmd === prefix) commandfile.run(client,msg,args);
     
       react(msg);
       sv443s_way_better_command_handler(msg);
