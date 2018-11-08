@@ -24,12 +24,12 @@ fs.readdir("./commands/", (err, files) => {
 
 client.on("ready", async () => {
 
-  client.user.setStatus("idle");
+  client.user.setStatus("dnd");
   client.user.setActivity("I just redeployed daddy!", { type: "PLAYING" });
   setTimeout(()=>{
       client.user.setStatus("online");
       client.user.setActivity("for naughty messages", { type: "WATCHING" });
-  }, 10000);
+  }, 2000);
   
 
 });
