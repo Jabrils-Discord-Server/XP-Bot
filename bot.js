@@ -24,8 +24,9 @@ fs.readdir("./commands/", (err, files) => {
 
 client.on("ready", async () => {
 
-  client.user.setPresence({status: 'online'});
-  client.user.setActivity("your mom", { type: "WATCHING" });
+  client.user.setPresence({status: 'idle'});
+  setTimeout(function(){client.user.setPresence({status: 'online'});}, 3000);
+  client.user.setActivity("your mom take a shower", { type: "WATCHING" });
 
 });
 
