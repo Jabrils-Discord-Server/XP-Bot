@@ -25,8 +25,12 @@ fs.readdir("./commands/", (err, files) => {
 client.on("ready", async () => {
 
   client.user.setStatus("idle");
-  setTimeout(function(){client.user.setStatus("online");}, 3000);
-  client.user.setActivity("your mom take a shower", { type: "WATCHING" });
+  client.user.setActivity("I just redeployed daddy!", { type: "PLAYING" });
+  setTimeout(()=>{
+      client.user.setStatus("online");
+      client.user.setActivity("for naughty messages", { type: "WATCHING" });
+  }, 10000);
+  
 
 });
 
