@@ -74,7 +74,7 @@ function react(msg) {
         let msgc = msg.content.toLowerCase();
         if(msgc.includes("indede")) msg.react("🇮").then(()=>msg.react("🇳").then(()=>msg.react("🇩").then(()=>msg.react("🇪").then(()=>msg.react("509131917304659968").then(()=>msg.react("509131411882639381"))))));
         if(msgc.includes("cough")) msg.react("492785060869832706");
-        if(includes_owo(msg, msgc)) msg.delete();
+        if(includes_owo(msgc)) msg.delete();
     }
     catch(err) {}
 }
@@ -98,10 +98,11 @@ catch(err) {
 }
 }
 
-function includes_owo(msg, msgc) {
+function includes_owo(msgc) {
     try {
         let owolist = ["owo", "uwu", "YwY", "0w0"];
-        for(let i = 0; i < owolist.length; i++) if(msgc.includes("owo") || msgc.includes("uwu")) msg.delete();
+        for(let i = 0; i < owolist.length; i++) if(msgc.includes("owo") || msgc.includes("uwu")) return true;
+        else return false;
     }
     catch(err) {}
 }
