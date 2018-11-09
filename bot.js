@@ -23,8 +23,7 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 client.on("ready", async () => {
-
-  client.user.setStatus("dnd");
+  setTimeout(()=>{client.user.setStatus("dnd");}, 1000);
   client.user.setActivity("I just redeployed daddy!", { type: "PLAYING" });
   setTimeout(()=>{
       client.user.setActivity("for naughty messages", { type: "WATCHING" });
@@ -96,7 +95,7 @@ try {
             msg.reply("I set my status to '" + msgc.split(" ")[2].toUpperCase().toLowerCase() + " " + msgarr + "'");
             return true;
             }
-            catch(err) {return false;}
+            catch(err) {msg.reply("Error in status command: " + err);return false;}
         }
         else if(msgc.split(" ") == "") return false;
     }
