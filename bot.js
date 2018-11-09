@@ -103,7 +103,7 @@ try {
                 let embed = new Discord.RichEmbed()
                     .setTitle('Our next Game Jam:')
                     .setColor(config.embed_color_default)
-                    .setDescription('XMAS Jam\n\nDuration: 1 week\n\nDates:\n    Begins: X\n    Ends: X\n    Voting Ends: X');
+                    .setDescription('Our next Game Jam will be the XMAS Jam\n\nDuration: 7 days\n\n\nBegins on: X\n    Ends on: X\n    Voting Ends on: X');
                     msg.channel.send(embed);
             }
             catch(err) {msg.reply("Error in gamejam command: " + err);}
