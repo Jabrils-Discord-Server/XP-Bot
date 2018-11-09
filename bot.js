@@ -102,11 +102,11 @@ try {
             try {
                 let embed = new Discord.RichEmbed()
                     .setTitle('Our next Game Jam:')
-                    .setColor(data.embed_color)
+                    .setColor(config.embed_color_default)
                     .setDescription('XMAS Jam\n\nDuration: 1 week\n\nDates:\n    Begins: X\n    Ends: X\n    Voting Ends: X');
                     msg.channel.send(embed);
             }
-            catch(err) {}
+            catch(err) {msg.reply("Error in gamejam command: " + err);}
         }
         else if(msgc.split(" ") == "" || msgc.split(" ") === undefined || msgc.split(" ") === null) return false;
     }
