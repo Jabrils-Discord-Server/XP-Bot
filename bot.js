@@ -28,10 +28,8 @@ client.on("ready", async () => {
   client.user.setActivity("I just redeployed daddy!", { type: "PLAYING" });
   setTimeout(()=>{
       client.user.setActivity("for naughty messages", { type: "WATCHING" });
-      client.user.setStatus("online");
+      setTimeout(()=>{client.user.setStatus("online");}, 5000);
   }, 3000);
-  
-
 });
 
 client.on("message", async msg => {
