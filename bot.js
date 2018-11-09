@@ -100,7 +100,11 @@ try {
         }
         if(msgc.split(" ")[1] == "gamejam"){
             try {
-                msg.reply("ayy lmao");
+                let embed = new Discord.RichEmbed()
+                    .setTitle('Our next Game Jam:')
+                    .setColor(data.embed_color)
+                    .setDescription('XMAS Jam\n\nDuration: 1 week\n\nDates:\n    Begins: X\n    Ends: X\n    Voting Ends: X');
+                    msg.channel.send(embed);
             }
             catch(err) {}
         }
