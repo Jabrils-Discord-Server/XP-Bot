@@ -87,6 +87,7 @@ try {
     if(msgc.split(" ")[0] == "?xp") {
         if(msgc.split(" ")[1] == "status"){
             try {
+            if(msgc.split(" ")[2] === undefined) return false;
             if(msgc.split(" ")[2].toUpperCase() != "PLAYING" && msgc.split(" ")[2].toUpperCase() != "WATCHING") return false;
             let msgarr = msgc.split(" ");
             msgarr.shift();msgarr.shift();msgarr.shift();
