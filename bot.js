@@ -47,9 +47,8 @@ client.on("message", async msg => {
       let commandfile = client.commands.get(cmd.slice(prefix.length));
       if(commandfile) commandfile.run(client,msg,args);
     
-      react(msg);
       sv443s_way_better_command_handler(msg);
-  
+      react(msg);
   }
   catch(error) {
       try {
@@ -77,8 +76,7 @@ function react(msg) {
     try {
         let msgc = msg.content.toLowerCase();
         if(msgc.includes("indede")) msg.react("🇮").then(()=>msg.react("🇳").then(()=>msg.react("🇩").then(()=>msg.react("🇪").then(()=>msg.react("509131917304659968").then(()=>msg.react("509131411882639381"))))));
-        if(msgc.includes("cough")) msg.react("492785060869832706");
-        if(msgc.includes("mock")) msg.react("506303207400669204");
+        if(msgc == "cough") msg.react("492785060869832706");
         if(msgc == "wtf") msg.react("493175956236664834");
         if(includes_owo(msgc)) msg.delete();
     }
@@ -94,9 +92,11 @@ try {
             let msgarr = msgc.split(" ");
             msgarr.shift();msgarr.shift();msgarr.shift();
             msgarr = msgarr.join(" ");
-            client.user.setActivity(msgarr, { type: msgc.split(" ")[2].toUpperCase() });
-            msg.reply("I set my status to '" + msgc.split(" ")[2].toUpperCase() + " " + msgarr + "'");
+            client.user.setActivity(msgarr,{type: msgc.split(" ")[2].toUpperCase()});
+            msg.reply("I set my status to '" + msgc.split(" ")[2].toUpperCase().toLowerCase() + " " + msgarr + "'");
+            return true;
         }
+        else if(msgc.split(" ") == "") return false;
     }
 }
 catch(err) {
@@ -107,7 +107,7 @@ catch(err) {
 function includes_owo(msgc) {
     try {
         let owolist = ["owo", "uwu", "ywy", "0w0", "3w3"];
-        for(let i = 0; i < owolist.length; i++) if(msgc.includes("owo") || msgc.includes("uwu")) return true;
+        for(let i = 0; i < owolist.length; i++) if(msgc.includes(owolist[i])) return true;
         else return false;
     }
     catch(err) {}
