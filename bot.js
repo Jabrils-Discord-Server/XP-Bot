@@ -92,6 +92,7 @@ try {
             let msgarr = msgc.split(" ");
             msgarr.shift();msgarr.shift();msgarr.shift();
             msgarr = msgarr.join(" ");
+            if(msgarr == " " || msgarr == "" || msgarr === undefined) return false;
             client.user.setActivity(msgarr,{type: msgc.split(" ")[2].toUpperCase()});
             msg.reply("I set my status to '" + msgc.split(" ")[2].toUpperCase().toLowerCase() + " " + msgarr + "'");
             return true;
