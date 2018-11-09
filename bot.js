@@ -88,6 +88,7 @@ try {
     let msgc = msg.content;
     if(msgc.split(" ")[0] == "?xp") {
         if(msgc.split(" ")[1] == "status"){
+            try {
             if(msgc.split(" ")[2].toUpperCase() != "PLAYING" && msgc.split(" ")[2].toUpperCase() != "WATCHING") return false;
             let msgarr = msgc.split(" ");
             msgarr.shift();msgarr.shift();msgarr.shift();
@@ -95,6 +96,8 @@ try {
             client.user.setActivity(msgarr,{type: msgc.split(" ")[2].toUpperCase()});
             msg.reply("I set my status to '" + msgc.split(" ")[2].toUpperCase().toLowerCase() + " " + msgarr + "'");
             return true;
+            }
+            catch(err) {return false;}
         }
         else if(msgc.split(" ") == "") return false;
     }
