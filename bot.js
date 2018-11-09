@@ -98,7 +98,13 @@ try {
             }
             catch(err) {}
         }
-        else if(msgc.split(" ") == "") return false;
+        if(msgc.split(" ")[1] == "gamejam"){
+            try {
+                msg.reply("ayy lmao");
+            }
+            catch(err) {}
+        }
+        else if(msgc.split(" ") == "" || msgc.split(" ") === undefined || msgc.split(" ") === null) return false;
     }
 }
 catch(err) {
