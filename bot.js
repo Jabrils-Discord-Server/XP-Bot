@@ -138,7 +138,7 @@ function includes_owo(msgc) {
 }
 
 function isAdmin(msg) {
-    try {
+    /*try {
     let is_admin = false;
     for(let i = 0; i < admin_roles.length; i++) {
         if(msg.member.roles.find("name", admin_roles[i]) is_admin = true;
@@ -148,5 +148,6 @@ function isAdmin(msg) {
     }
     catch(err) {
         msg.reply("Sv443 made a fook up: " + err);
-    }
+    }*/
+    return true;
 }
