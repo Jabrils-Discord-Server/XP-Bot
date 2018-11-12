@@ -35,6 +35,7 @@ client.on("ready", async () => {
 
 client.on("message", async msg => {
   try {
+      msg.reply("ayy I'm alive");
       if(msg.author.bot) return false;
       if(msg.channel.type === "dm") return false;
   
