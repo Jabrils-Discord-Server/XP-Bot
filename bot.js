@@ -110,7 +110,7 @@ try {
         }
         if(msgc.split(" ")[1] == "naughty" && (msg.member.roles.find("name", "user++") || msg.member.roles.find("name", "Rot13") || msg.member.roles.find("name", "Arbiter of Fate"))) {
             try {
-                msg.reply("Put user " + msgc.split(" ")[2] + " in the Naughty Corner!");
+                msg.reply("Put user \"" + msgc.split(" ")[2] + "\" in the Naughty Corner!");
             }
             catch(err) {msg.reply("Error in naughty command: " + err);}
         }
