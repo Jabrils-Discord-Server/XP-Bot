@@ -85,7 +85,7 @@ function sv443s_way_better_command_handler(msg) {
 try {
     let msgc = msg.content;
     if(msgc.split(" ")[0] == "?xp") {
-        if(msgc.split(" ")[1] == "status"){
+        if(msgc.split(" ")[1] == "status" && (msg.member.roles.find("name", "user++") || msg.member.roles.find("name", "Rot13") || msg.member.roles.find("name", "Arbiter of Fate"))) {
             try {
             if(msgc.split(" ")[2] === undefined) return false;
             if(msgc.split(" ")[2].toUpperCase() != "PLAYING" && msgc.split(" ")[2].toUpperCase() != "WATCHING") return false;
@@ -98,7 +98,7 @@ try {
             }
             catch(err) {}
         }
-        if(msgc.split(" ")[1] == "gamejam"){
+        if(msgc.split(" ")[1] == "gamejam") {
             try {
                 let embed = new Discord.RichEmbed()
                     .setTitle('Our next Game Jam:')
@@ -107,6 +107,12 @@ try {
                     msg.channel.send(embed);
             }
             catch(err) {msg.reply("Error in gamejam command: " + err);}
+        }
+        if(msgc.split(" ")[1] == "naughty" && (msg.member.roles.find("name", "user++") || msg.member.roles.find("name", "Rot13") || msg.member.roles.find("name", "Arbiter of Fate"))) {
+            try {
+                msg.reply("Put user " + msgc.split(" ")[2] + " in the Naughty Corner!");
+            }
+            catch(err) {msg.reply("Error in naughty command: " + err);}
         }
         else if(msgc.split(" ") == "" || msgc.split(" ") === undefined || msgc.split(" ") === null) return false;
     }
