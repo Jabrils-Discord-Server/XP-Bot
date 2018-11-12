@@ -4,6 +4,8 @@ const fs = require("fs");
 const client = new Discord.Client({disableEveryone: true});
 client.commands = new Discord.Collection();
 
+const admin_roles = ["user++", "Rot13", "Arbiter of Fate", "Our Lord, Jabril"];
+
 module.exports = {
   embed_color: config.embed_color_default
 }
@@ -85,7 +87,7 @@ function sv443s_way_better_command_handler(msg) {
 try {
     let msgc = msg.content;
     if(msgc.split(" ")[0] == "?xp") {
-        if(msgc.split(" ")[1] == "status" && (msg.member.roles.find("name", "user++") || msg.member.roles.find("name", "Rot13") || msg.member.roles.find("name", "Arbiter of Fate"))) {
+        if(msgc.split(" ")[1] == "status" && isAdmin(msg)) {
             try {
             if(msgc.split(" ")[2] === undefined) return false;
             if(msgc.split(" ")[2].toUpperCase() != "PLAYING" && msgc.split(" ")[2].toUpperCase() != "WATCHING") return false;
@@ -110,7 +112,7 @@ try {
             }
             catch(err) {msg.reply("Error in gamejam command: " + err);}
         }
-        if(msgc.split(" ")[1] == "naughty" && (msg.member.roles.find("name", "user++") || msg.member.roles.find("name", "Rot13") || msg.member.roles.find("name", "Arbiter of Fate"))) {
+        if(msgc.split(" ")[1] == "naughty" && isAdmin(msg)) {
             try {
                 msg.reply("Put user \"" + msgc.split(" ")[2] + "\" in the Naughty Corner!");
                 msg.delete();
@@ -132,4 +134,13 @@ function includes_owo(msgc) {
         else return false;
     }
     catch(err) {}
+}
+
+function isAdmin(msg) {
+    let is_admin = false;
+    for(let i = 0; i < admin_roles.length; i++) {
+        if(msg.member.roles.find("name", admin_roles[i]) is_admin = true;
+    }
+    if(is_admin) return true;
+    else return false;
 }
