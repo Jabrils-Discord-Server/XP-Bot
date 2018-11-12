@@ -94,6 +94,7 @@ try {
             msgarr = msgarr.join(" ");
             client.user.setActivity(msgarr,{type: msgc.split(" ")[2].toUpperCase()});
             msg.reply("I set my status to '" + msgc.split(" ")[2].toUpperCase().toLowerCase() + " " + msgarr + "'");
+            msg.delete();
             return true;
             }
             catch(err) {}
@@ -105,12 +106,14 @@ try {
                     .setColor(config.embed_color_default)
                     .setDescription('Our next Game Jam will be the XMAS Jam\n\nDuration: 7 days\n\n\nBegins on: X\n    Ends on: X\n    Voting Ends on: X');
                     msg.channel.send(embed);
+                    msg.delete();
             }
             catch(err) {msg.reply("Error in gamejam command: " + err);}
         }
         if(msgc.split(" ")[1] == "naughty" && (msg.member.roles.find("name", "user++") || msg.member.roles.find("name", "Rot13") || msg.member.roles.find("name", "Arbiter of Fate"))) {
             try {
                 msg.reply("Put user \"" + msgc.split(" ")[2] + "\" in the Naughty Corner!");
+                msg.delete();
             }
             catch(err) {msg.reply("Error in naughty command: " + err);}
         }
