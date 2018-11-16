@@ -25,7 +25,7 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 client.on("ready", async () => {
-  client.user.setAvatar('https://sv443.net/cdn/other/xpbotpfp.png');
+  client.user.setAvatar('https://cdn.discordapp.com/emojis/487733321879519232.png');
   
   setTimeout(()=>{client.user.setStatus("dnd");}, 1000);
   client.user.setActivity("I just redeployed daddy!", { type: "PLAYING" });
