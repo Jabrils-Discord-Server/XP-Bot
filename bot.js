@@ -1,6 +1,7 @@
 const config = require("./config.js")
 const Discord = require("discord.js");
 const fs = require("fs");
+//const svBigGay = require('try-and-catch-everything.js');
 const client = new Discord.Client({disableEveryone: true});
 client.commands = new Discord.Collection();
 
