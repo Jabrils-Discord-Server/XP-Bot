@@ -114,7 +114,8 @@ try {
         }
         if(msgc.split(" ")[1] == "naughty" && isAdmin(msg)) {
             try {
-                msg.reply("Put user \"" + msgc.split(" ")[2] + "\" in the Naughty Corner!");
+                let naughty_role = msg.guild.roles.find(role => role.name === "The Naughty Corner (Misbehaving)");
+                msg.reply("Put user \"" + msgc.split(" ")[2] + "\" in the Naughty Corner!\n\ndbg: " + naughty_role);
                 msg.delete();
             }
             catch(err) {msg.reply("Error in naughty command: " + err);}
@@ -137,16 +138,15 @@ function includes_owo(msgc) {
 }
 
 function isAdmin(msg) {
-    /*try {
-    let is_admin = false;
-    for(let i = 0; i < admin_roles.length; i++) {
-        if(msg.member.roles.find("name", admin_roles[i]) is_admin = true;
-    }
-    if(is_admin) return true;
-    else return false;
+    try {
+        let is_admin = false;
+        for(let i = 0; i < admin_roles.length; i++) {
+            if(msg.member.roles.has(admin_roles[i].id) is_admin = true;
+        }
+        return is_admin;
     }
     catch(err) {
         msg.reply("Sv443 made a fook up: " + err);
-    }*/
+    }
     return true;
 }
