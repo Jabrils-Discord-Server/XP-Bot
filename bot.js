@@ -148,5 +148,4 @@ function isAdmin(msg) {
     catch(err) {
         msg.reply("Sv443 made a fook up: " + err);
     }
-    return true;
 }
