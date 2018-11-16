@@ -141,7 +141,7 @@ function isAdmin(msg) {
     try {
         let is_admin = false;
         for(let i = 0; i < admin_roles.length; i++) {
-            if(msg.member.roles.has(admin_roles[i].id) is_admin = true;
+            if(msg.member.roles.has(admin_roles[i].id)) is_admin = true;
         }
         return is_admin;
     }
