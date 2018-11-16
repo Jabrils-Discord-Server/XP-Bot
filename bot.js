@@ -25,6 +25,8 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 client.on("ready", async () => {
+  client.user.setAvatar('https://sv443.net/cdn/other/xpbotpfp.png');
+  
   setTimeout(()=>{client.user.setStatus("dnd");}, 1000);
   client.user.setActivity("I just redeployed daddy!", { type: "PLAYING" });
   setTimeout(()=>{
