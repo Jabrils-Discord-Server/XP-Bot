@@ -88,6 +88,7 @@ function react(msg) {
 
 function sv443s_way_better_command_handler(msg) {
 try {
+    console.log("(test) raw message content: " + msg.content);
     let msgc = msg.content;
     if(msgc.split(" ")[0] == "?xp") {
         if(msgc.split(" ")[1] == "status" && isAdmin(msg)) {
