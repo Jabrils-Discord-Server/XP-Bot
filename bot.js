@@ -4,7 +4,6 @@ const fs = require("fs");
 
 const client = new Discord.Client();
 const config = require("./config.json");
-// We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
 client.config = config;
 
 fs.readdir("./events/", (err, files) => {
@@ -29,4 +28,4 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
-client.login("NTA2MjU0MDU0MzM5Mzc5MjIw.Dr5jRw.RQQrZ-KnmFSNb9Tn3iS8_90-8CU");
+client.login(process.env.TOKEN);
