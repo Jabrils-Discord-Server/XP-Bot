@@ -23,7 +23,8 @@
 	},
 	"license":"Apache-2.0",
 	"dependencies":{
-		"discord.js":"^11.0.0"
+		"discord.js":"^11.0.0",
+    		"enmap": "^4.3.3"
 	},
 	"bugs":{
 		"url":""
