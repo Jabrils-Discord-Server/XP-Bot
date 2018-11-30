@@ -11,6 +11,7 @@ exports.run = (client, message, args) => {
     .setTitle('New team submitted:')
     .setColor(client.config.embed_color_default)
     .setDescription(`**${teamMates}**\n just formed a team!`)
+    .addField("Team submitted by: ", `${message.author.nickname}`)
 
     client.channels.get(logChannel).send(embed)
 }
