@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 exports.run = (client, message, args) => {
     let logChannel = '489605729624522762'
 
-    let teamMates = args.join(' ')
+    let teamMates = message.mentions.users.join(' ')
 
     let embed = new Discord.RichEmbed()
     .setTitle('New team submitted:')
