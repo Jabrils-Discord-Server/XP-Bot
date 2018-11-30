@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
     let ideas = args.join(' ')
 
     let embed = new Discord.RichEmbed()
-    .setTitle(`Theme idea from **${message.author}**`)
+    .setTitle(`Theme idea from **${message.author.username}**`)
     .setColor(client.config.embed_color_default)
     .setDescription(`'${ideas}'`)
 
