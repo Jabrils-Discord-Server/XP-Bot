@@ -3,7 +3,8 @@ const Discord = require('discord.js')
 exports.run = (client, message, args) => {
     let logChannel = '489605729624522762'
 
-    let teamMates = message.content.split(" ")
+    let teamMates = message.content.toString().split(" ")
+    console.log("length: " + teamMates.length)
     teamMates = teamMates[teamMates.length]
     console.log(teamMates)
 
