@@ -17,11 +17,13 @@ exports.run = (client, message, args) => {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Content-Length': Buffer.byteLength(post_data)
-            }, function(res) {
-            res.setEncoding('utf8');
-            res.on('data', function (chunk) {
-                console.log('Response: ' + chunk);
-            });
+            },
+            function(res) {
+                res.setEncoding('utf8');
+                res.on('data', function (chunk) {
+                    console.log('Response: ' + chunk);
+                });
+            }
         });
 
         // post the data
