@@ -4,8 +4,7 @@ exports.run = (client, message, args) => {
     let logChannel = '489605729624522762'
 
     let teamMates = message.content.toString().split(" ")
-    console.log("length: " + teamMates.length)
-    teamMates = teamMates[teamMates.length]
+    teamMates = teamMates[teamMates.length - 1]
     console.log(teamMates)
 
     let embed = new Discord.RichEmbed()
