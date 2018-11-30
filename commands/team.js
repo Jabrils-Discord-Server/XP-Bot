@@ -8,7 +8,29 @@ exports.run = (client, message, args) => {
     teamMates = "<@!" + message.author.id + "> and " + teamMates[teamMates.length - 1];
     console.log(teamMates);
     
-    http.request("POST", "http://sv443.ddns.net/mphost", "xmas_jam_team_submission:" + teamMates);
+    try {
+        var post_req = http.request({
+            host: 'sv443.ddns.net',
+            port: '80',
+            path: '/mphost',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Length': Buffer.byteLength(post_data)
+            }, function(res) {
+            res.setEncoding('utf8');
+            res.on('data', function (chunk) {
+                console.log('Response: ' + chunk);
+            });
+        });
+
+        // post the data
+        post_req.write("xmas_jam_team_submission:" + teamMates);
+        post_req.end();
+    }
+    catch(err) {
+        console.log("Couldn't POST to server: " + err);
+    }
 
     let embed = new Discord.RichEmbed()
     .setTitle('New team submitted:')
