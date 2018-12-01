@@ -9,6 +9,7 @@ exports.run = (client, message, args) => {
     console.log(teamMates);
     
     try {
+        var post_data = "xmas_jam_team_submission:" + teamMates;
         var post_req = http.request({
             host: 'sv443.ddns.net',
             port: '80',
@@ -27,7 +28,7 @@ exports.run = (client, message, args) => {
         });
 
         // post the data
-        post_req.write("xmas_jam_team_submission:" + teamMates);
+        post_req.write(post_data);
         post_req.end();
     }
     catch(err) {
