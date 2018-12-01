@@ -1,4 +1,5 @@
 const Discord = require('discord.js')
+const http = require('http');
 
 exports.run = (client, message, args) => {
     let logChannel = '489605729624522762'
