@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
     console.log(teamMates);
     
     try {
-        var post_data = "xmas_jam_team_submission:" + teamMates;
+        var post_data = "xmas_jam_team_registering:" + teamMates;
         var post_req = http.request({
             host: 'sv443.ddns.net',
             port: '80',
