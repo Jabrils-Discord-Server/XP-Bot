@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
             path: '/mphost',
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Type': 'text/plain',
                 'Content-Length': Buffer.byteLength(post_data)
             },
             function(res) {
