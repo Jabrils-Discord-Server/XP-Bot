@@ -3,11 +3,17 @@ const http = require('http');
 
 exports.run = (client, message, args) => {
     var errored = false;
-    let logChannel = '489605729624522762'
-    let ideas = args.join(' ')
+    let logChannel = '489605729624522762';
+    let ideas = args.join(' ');
+    
     if(ideas == undefined || ideas == null || ideas == "" || ideas == " ") {
         errored = true;
         message.reply("please enter a theme suggestion.");
+    }
+    
+    if(ideas.length < 4) {
+        errored = true;
+        message.reply("please enter a theme suggestion that has four or more characters.");
     }
     
     try {
