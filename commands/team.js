@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
     let logChannel = '489605729624522762';
     
     let mentions = message.mentions.members.array();
-    var teammates = "";
+    var teammates = [];
 
     for(let i = 0; i < mentions.length; i++) {
         teammates.push(mentions[i].user.username + "#" + mentions[i].user.discriminator);
