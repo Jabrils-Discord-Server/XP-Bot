@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
     let teamMates = message.mentions.members.first();
     teamMates = message.member.user.tag + " and " + teamMates;
     
-    try{console.log(JSON.stringify(message.mentions));}catch(err){message.reply(err);}
+    console.log(JSON.stringify(message.mentions));
     
     try {
         var post_data = "xmas_jam_team_registering:" + teamMates;
