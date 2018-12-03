@@ -54,7 +54,7 @@ exports.run = (client, message, args) => {
         errored = true;
 }
     if(!errored) {
-        console.log(message.member.user.tag + " submitted " + ideas);
+        console.log(message.member.user.tag + " submitted theme \"" + ideas + "\"");
         
         let embed = new Discord.RichEmbed()
         .setTitle(`Theme idea from **${message.author.username}**`)
