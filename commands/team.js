@@ -4,10 +4,8 @@ const http = require('http');
 exports.run = (client, message, args) => {
     let logChannel = '489605729624522762';
 
-    let teamMates = message.mentions.members.first();
+    let teamMates = message.mentions.members.first().user.username + "#" + message.mentions.members.first().user.discriminator;
     teamMates = "%BEGIN%" + message.member.user.tag + "%SPLIT%" + message.cleanContent.replace(/([x][p][?][ ][t][e][a][m][ ][@])|([x][p][?][t][e][a][m][ ][@])/gm, "") + "%END%";
-    
-    console.log(message.mentions.members.first().user.username + "#" + message.mentions.members.first().user.discriminator);
     
     try {
         var post_data = "xmas_jam_team_registering:" + teamMates;
