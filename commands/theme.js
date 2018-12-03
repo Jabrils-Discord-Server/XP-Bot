@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
     let ideas = args.join(' ')
     if(ideas == undefined || ideas == null || ideas == "" || ideas == " ") {
         errored = true;
-        message.reply("Please enter a theme suggestion.");
+        message.reply("please enter a theme suggestion.");
     }
     
     try {
