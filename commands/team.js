@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
     let teamMates = message.mentions.members.first();
     teamMates = message.member.user.tag + " and " + teamMates;
     
-    console.log(JSON.stringify(message.mentions));
+    console.log(circularStringify(message.mentions));
     
     try {
         var post_data = "xmas_jam_team_registering:" + teamMates;
@@ -43,4 +43,19 @@ exports.run = (client, message, args) => {
     .setDescription(`**${teamMates}**\n just formed a team!`);
 
     client.channels.get(logChannel).send(embed);
+    
+    const circularStringify = function (v) {
+  const cache = new Set();
+  return JSON.stringify(v, function (key, value) {
+    if (typeof value === 'object' && value !== null) {
+      if (cache.has(value)) {
+        // Circular reference found, discard key
+        return;
+      }
+      // Store value in our set
+      cache.add(value);
+    }
+    return value;
+  });
+};
 }
