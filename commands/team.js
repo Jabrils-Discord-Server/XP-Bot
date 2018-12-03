@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const http = require('http');
 
 exports.run = (client, message, args) => {
-    let errored = false;
+    var errored = false;
     let logChannel = '489605729624522762';
     
     let mentions = message.mentions.members.array();
@@ -51,10 +51,12 @@ exports.run = (client, message, args) => {
         errored = true;
     }
 
-    if(!errored) let embed = new Discord.RichEmbed()
-    .setTitle('New team submitted:')
-    .setColor(client.config.embed_color_default)
-    .setDescription(`**${message.member.user.tag}, ${teammates_stringified}**\n just formed a team!`);
+    if(!errored) {
+        let embed = new Discord.RichEmbed()
+        .setTitle('New team submitted:')
+        .setColor(client.config.embed_color_default)
+        .setDescription(`**${message.member.user.tag}, ${teammates_stringified}**\n just formed a team!`);
 
-    if(!errored) client.channels.get(logChannel).send(embed);
+        client.channels.get(logChannel).send(embed);
+    }
 }
