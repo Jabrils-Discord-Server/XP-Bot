@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
     
     let mentions = message.mentions.members.array();
     if(mentions == undefined || mentions == null || mentions == "" || mentions == []) {
-        message.reply("please tag at least one or more of your teammates.");
+        message.reply("please tag at least one or more of your teammates to create a team.");
         errored = true;
         return;
     }
@@ -52,6 +52,8 @@ exports.run = (client, message, args) => {
     }
 
     if(!errored) {
+        message.reply("you successfully created a team with " + teammates_stringified);
+        
         let embed = new Discord.RichEmbed()
         .setTitle('New team submitted:')
         .setColor(client.config.embed_color_default)
