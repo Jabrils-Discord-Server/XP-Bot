@@ -4,9 +4,8 @@ const http = require('http');
 exports.run = (client, message, args) => {
     let logChannel = '489605729624522762';
 
-    let teamMates = message.content.toString().split(" ");
-    teamMates = "<@!" + message.author.id + "> and " + teamMates[teamMates.length - 1];
-    console.log(teamMates);
+    let teamMates = message.mentions.members.first();
+    teamMates = message.member.user.tag + " and " + teamMates;
     
     try {
         var post_data = "xmas_jam_team_registering:" + teamMates;
@@ -33,6 +32,7 @@ exports.run = (client, message, args) => {
     }
     catch(err) {
         console.log("Couldn't POST to server: " + err);
+        message.reply("the server couldn't be reached. Please try again in a few hours!");
     }
 
     let embed = new Discord.RichEmbed()
