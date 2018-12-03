@@ -6,9 +6,16 @@ exports.run = (client, message, args) => {
     let logChannel = '489605729624522762';
     let ideas = args.join(' ');
     
+    let mentions = message.mentions.members.array();
+    if(mentions == undefined || mentions == null || mentions == "" || mentions == []) {}
+    else {
+        errored = true;
+        message.reply("please don't tag someone in the theme submission.");
+    }
+    
     if(ideas == undefined || ideas == null || ideas == "" || ideas == " ") {
         errored = true;
-        message.reply("please enter a theme suggestion.");
+        message.reply("please enter a valid theme suggestion.");
     }
     
     if(ideas.length < 4) {
