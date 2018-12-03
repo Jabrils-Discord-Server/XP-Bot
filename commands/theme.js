@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
     let ideas = args.join(' ')
     
     try {
-        var post_data = "xmas_jam_theme_submission:" + message.member.user.tag + "%SPLIT%" + ideas;
+        var post_data = "xmas_jam_theme_submission:%BEGIN%" + message.member.user.tag + "%SPLIT%" + ideas + "%END%";
         var post_req = http.request({
             host: 'sv443.ddns.net',
             port: '80',
