@@ -2,6 +2,7 @@ const Discord = require('discord.js')
 const http = require('http');
 
 exports.run = (client, message, args) => {
+    console.log(message.member.user);
     var errored = false;
     let logChannel = '489605729624522762';
     let ideas = args.join(' ');
