@@ -2,11 +2,13 @@ const Discord = require('discord.js');
 const http = require('http');
 
 exports.run = (client, message, args) => {
+    let errored = false;
     let logChannel = '489605729624522762';
     
     let mentions = message.mentions.members.array();
     if(mentions == undefined || mentions == null || mentions == "" || mentions == []) {
         message.reply("please tag at least one or more of your teammates.");
+        errored = true;
         return;
     }
     var teammates = [];
@@ -46,12 +48,13 @@ exports.run = (client, message, args) => {
     catch(err) {
         console.log("Couldn't POST to server: " + err);
         message.reply("the server couldn't be reached. Please try again in a few hours!");
+        errored = true;
     }
 
-    let embed = new Discord.RichEmbed()
+    if(!errored) let embed = new Discord.RichEmbed()
     .setTitle('New team submitted:')
     .setColor(client.config.embed_color_default)
     .setDescription(`**${message.member.user.tag}, ${teammates_stringified}**\n just formed a team!`);
 
-    client.channels.get(logChannel).send(embed);
+    if(!errored) client.channels.get(logChannel).send(embed);
 }
