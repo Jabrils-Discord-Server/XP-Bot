@@ -5,6 +5,10 @@ exports.run = (client, message, args) => {
     let logChannel = '489605729624522762';
     
     let mentions = message.mentions.members.array();
+    if(mentions == undefined || mentions == null || mentions == "" || mentions == []) {
+        message.reply("please tag at least one or more of your teammates.");
+        return;
+    }
     var teammates = [];
 
     for(let i = 0; i < mentions.length; i++) {
