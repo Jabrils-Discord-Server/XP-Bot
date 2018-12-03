@@ -30,6 +30,7 @@ exports.run = (client, message, args) => {
     }
     catch(err) {
         console.log("Couldn't POST to server: " + err);
+        message.reply("your submission couldn't be processed by the server. Please try again in a few hours!");
 }
 
     let embed = new Discord.RichEmbed()
