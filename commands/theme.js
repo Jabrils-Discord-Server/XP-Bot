@@ -2,6 +2,7 @@ const Discord = require('discord.js')
 const http = require('http');
 
 exports.run = (client, message, args) => {
+    var errored = false;
     let logChannel = '489605729624522762'
     let ideas = args.join(' ')
     
@@ -31,12 +32,16 @@ exports.run = (client, message, args) => {
     catch(err) {
         console.log("Couldn't POST to server: " + err);
         message.reply("your submission couldn't be processed by the server. Please try again in a few hours!");
+        errored = true;
 }
+    if(!errored) {
+        let embed = new Discord.RichEmbed()
+        .setTitle(`Theme idea from **${message.author.username}**`)
+        .setColor(client.config.embed_color_default)
+        .setDescription(`'${ideas}'`);
 
-    let embed = new Discord.RichEmbed()
-    .setTitle(`Theme idea from **${message.author.username}**`)
-    .setColor(client.config.embed_color_default)
-    .setDescription(`'${ideas}'`)
-
-    client.channels.get(logChannel).send(embed)
+        client.channels.get(logChannel).send(embed);
+        
+        message.reply("your theme idea (**" + ideas + "**) was successfully submitted!");
+    }
 }
