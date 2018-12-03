@@ -3,21 +3,19 @@ const http = require('http');
 
 exports.run = (client, message, args) => {
     let logChannel = '489605729624522762';
-
-    let teamMates = message.member.user.tag + " and " + message.mentions.members.first().user.username + "#" + message.mentions.members.first().user.discriminator;
-    message.mentions.members.array();
     
     let mentions = message.mentions.members.array();
-    var done = "";
+    var teammates = "";
 
     for(let i = 0; i < mentions.length; i++) {
-        done += mentions[i].user.username + "#" + mentions[i].user.discriminator + ", ";
+        teammates.push(mentions[i].user.username + "#" + mentions[i].user.discriminator);
     }
-
-    console.log(done);
+    
+    if(teammates.length > 1) let teammates_stringified = teammates.join(", ");
+    else let teammates_stringified = teammates[0];
 
     try {
-        var post_data = "xmas_jam_team_registering:%BEGIN%" + message.member.user.tag + "%SPLIT%" + message.mentions.members.first().user.username + "#" + message.mentions.members.first().user.discriminator + "%END%";
+        var post_data = "xmas_jam_team_registering:%BEGIN%" + message.member.user.tag + "%SPLIT%" + teammates_stringified + "%END%";
         var post_req = http.request({
             host: 'sv443.ddns.net',
             port: '80',
@@ -47,7 +45,7 @@ exports.run = (client, message, args) => {
     let embed = new Discord.RichEmbed()
     .setTitle('New team submitted:')
     .setColor(client.config.embed_color_default)
-    .setDescription(`**${teamMates}**\n just formed a team!`);
+    .setDescription(`**${message.member.user.tag}, ${teammates_stringified}**\n just formed a team!`);
 
     client.channels.get(logChannel).send(embed);
 }
