@@ -8,10 +8,10 @@ exports.run = (client, message, args) => {
     message.mentions.members.array();
     
     let mentions = message.mentions.members.array();
-    var done;
+    var done = "";
 
     for(let i = 0; i < mentions.length; i++) {
-        done += mentions[i].user.username + "#" + mentions[i].user.discriminator;
+        done += mentions[i].user.username + "#" + mentions[i].user.discriminator + ", ";
     }
 
     console.log(done);
