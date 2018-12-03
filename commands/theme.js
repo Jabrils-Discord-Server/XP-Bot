@@ -5,29 +5,35 @@ exports.run = (client, message, args) => {
     var errored = false;
     let logChannel = '489605729624522762'
     let ideas = args.join(' ')
+    if(ideas == undefined || ideas == null || ideas == "" || ideas == " ") {
+        errored = true;
+        message.reply("Please enter a theme suggestion.");
+    }
     
     try {
-        var post_data = "xmas_jam_theme_submission:%BEGIN%" + message.member.user.tag + "%SPLIT%" + ideas + "%END%";
-        var post_req = http.request({
-            host: 'sv443.ddns.net',
-            port: '80',
-            path: '/mphost',
-            method: 'POST',
-            headers: {
-                'Content-Type': 'text/plain',
-                'Content-Length': Buffer.byteLength(post_data)
-            },
-            function(res) {
-                res.setEncoding('utf8');
-                res.on('data', function (chunk) {
-                    console.log('Response: ' + chunk);
-                });
-            }
-        });
+        if(!errored) {
+            var post_data = "xmas_jam_theme_submission:%BEGIN%" + message.member.user.tag + "%SPLIT%" + ideas + "%END%";
+            var post_req = http.request({
+                host: 'sv443.ddns.net',
+                port: '80',
+                path: '/mphost',
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain',
+                    'Content-Length': Buffer.byteLength(post_data)
+                },
+                function(res) {
+                    res.setEncoding('utf8');
+                    res.on('data', function (chunk) {
+                        console.log('Response: ' + chunk);
+                    });
+                }
+            });
 
-        // post the data
-        post_req.write(post_data);
-        post_req.end();
+            // post the data
+            post_req.write(post_data);
+            post_req.end();
+        }
     }
     catch(err) {
         console.log("Couldn't POST to server: " + err);
