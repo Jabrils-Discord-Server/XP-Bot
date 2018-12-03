@@ -5,7 +5,16 @@ exports.run = (client, message, args) => {
     let logChannel = '489605729624522762';
 
     let teamMates = message.member.user.tag + " and " + message.mentions.members.first().user.username + "#" + message.mentions.members.first().user.discriminator;
-    console.log(message.mentions.members.array().join());    
+    message.mentions.members.array();
+    
+    let mentions = message.mentions.members.array();
+    var done;
+
+    for(let i = 0; i < mentions.length; i++) {
+        done += mentions[i].user.username + "#" + mentions[i].user.discriminator;
+    }
+
+    console.log(done);
 
     try {
         var post_data = "xmas_jam_team_registering:%BEGIN%" + message.member.user.tag + "%SPLIT%" + message.mentions.members.first().user.username + "#" + message.mentions.members.first().user.discriminator + "%END%";
