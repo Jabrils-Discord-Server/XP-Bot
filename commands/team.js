@@ -11,8 +11,10 @@ exports.run = (client, message, args) => {
         teammates.push(mentions[i].user.username + "#" + mentions[i].user.discriminator);
     }
     
-    if(teammates.length > 1) let teammates_stringified = teammates.join(", ");
-    else let teammates_stringified = teammates[0];
+    let teammates_stringified = "[ERROR]";
+    
+    if(teammates.length > 1) teammates_stringified = teammates.join(", ");
+    else teammates_stringified = teammates[0];
 
     try {
         var post_data = "xmas_jam_team_registering:%BEGIN%" + message.member.user.tag + "%SPLIT%" + teammates_stringified + "%END%";
