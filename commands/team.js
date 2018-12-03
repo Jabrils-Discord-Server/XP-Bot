@@ -61,6 +61,7 @@ exports.run = (client, message, args) => {
 
     if(!errored) {
         message.reply("you successfully created a team with **" + teammates_stringified + "**");
+        message.react("✅");
         
         let embed = new Discord.RichEmbed()
         .setTitle('New team submitted:')
