@@ -54,6 +54,8 @@ exports.run = (client, message, args) => {
         errored = true;
 }
     if(!errored) {
+        console.log(message.member.user.tag + " submitted " + ideas);
+        
         let embed = new Discord.RichEmbed()
         .setTitle(`Theme idea from **${message.author.username}**`)
         .setColor(client.config.embed_color_default)
