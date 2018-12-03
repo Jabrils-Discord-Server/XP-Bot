@@ -4,10 +4,10 @@ const http = require('http');
 exports.run = (client, message, args) => {
     let logChannel = '489605729624522762';
 
-    let teamMates = "%BEGIN%" + message.member.user.tag + "%SPLIT%" + message.mentions.members.first().user.username + "#" + message.mentions.members.first().user.discriminator + "%END%";
+    let teamMates = message.member.user.tag + " and " + message.mentions.members.first().user.username + "#" + message.mentions.members.first().user.discriminator;
     
     try {
-        var post_data = "xmas_jam_team_registering:" + teamMates;
+        var post_data = "xmas_jam_team_registering:%BEGIN%" + message.member.user.tag + "%SPLIT%" + message.mentions.members.first().user.username + "#" + message.mentions.members.first().user.discriminator + "%END%";
         var post_req = http.request({
             host: 'sv443.ddns.net',
             port: '80',
