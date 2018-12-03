@@ -14,7 +14,9 @@ exports.run = (client, message, args) => {
     var teammates = [];
 
     for(let i = 0; i < mentions.length; i++) {
-        teammates.push(mentions[i].user.username + "#" + mentions[i].user.discriminator);
+        let fu = mentions[i].user.username + "#" + mentions[i].user.discriminator;
+        if(fu == message.member.user.tag) message.reply("fuck you");
+        teammates.push(fu);
     }
     
     let teammates_stringified = "[ERROR]";
