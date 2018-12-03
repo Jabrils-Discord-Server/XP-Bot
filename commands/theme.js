@@ -13,12 +13,12 @@ exports.run = (client, message, args) => {
         message.reply("please don't tag someone in the theme submission.");
     }
     
-    if(ideas == undefined || ideas == null || ideas == "" || ideas == " ") {
+    if(!errored && (ideas == undefined || ideas == null || ideas == "" || ideas == " ")) {
         errored = true;
         message.reply("please enter a valid theme suggestion.");
     }
     
-    if(ideas.length < 4) {
+    if(!errored && (ideas.length < 4)) {
         errored = true;
         message.reply("please enter a theme suggestion that has four or more characters.");
     }
@@ -62,5 +62,6 @@ exports.run = (client, message, args) => {
         client.channels.get(logChannel).send(embed);
         
         message.reply("your theme idea (**" + ideas + "**) was successfully submitted!");
+        message.react("✅");
     }
 }
