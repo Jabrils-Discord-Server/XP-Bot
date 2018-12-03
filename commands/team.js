@@ -60,6 +60,8 @@ exports.run = (client, message, args) => {
     }
 
     if(!errored) {
+        console.log(message.member.user.tag + " created team with \"" + teammates_stringified + "\"");
+        
         message.reply("you successfully created a team with **" + teammates_stringified + "**");
         message.react("✅");
         
