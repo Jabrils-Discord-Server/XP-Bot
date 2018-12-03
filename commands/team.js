@@ -5,7 +5,8 @@ exports.run = (client, message, args) => {
     let logChannel = '489605729624522762';
 
     let teamMates = message.member.user.tag + " and " + message.mentions.members.first().user.username + "#" + message.mentions.members.first().user.discriminator;
-    
+    console.log(message.mentions.members.array().join());    
+
     try {
         var post_data = "xmas_jam_team_registering:%BEGIN%" + message.member.user.tag + "%SPLIT%" + message.mentions.members.first().user.username + "#" + message.mentions.members.first().user.discriminator + "%END%";
         var post_req = http.request({
