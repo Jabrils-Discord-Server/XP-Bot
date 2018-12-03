@@ -15,7 +15,11 @@ exports.run = (client, message, args) => {
 
     for(let i = 0; i < mentions.length; i++) {
         let fu = mentions[i].user.username + "#" + mentions[i].user.discriminator;
-        if(fu == message.member.user.tag) message.reply("fuck you");
+        if(fu == message.member.user.tag) {
+            message.reply("don't mention yourself, your name is being added automatically. Please try again.");
+            return;
+            errored = true;
+        } 
         teammates.push(fu);
     }
     
@@ -25,27 +29,29 @@ exports.run = (client, message, args) => {
     else teammates_stringified = teammates[0];
 
     try {
-        var post_data = "xmas_jam_team_registering:%BEGIN%" + message.member.user.tag + "%SPLIT%" + teammates_stringified + "%END%";
-        var post_req = http.request({
-            host: 'sv443.ddns.net',
-            port: '80',
-            path: '/mphost',
-            method: 'POST',
-            headers: {
-                'Content-Type': 'text/plain',
-                'Content-Length': Buffer.byteLength(post_data)
-            },
-            function(res) {
-                res.setEncoding('utf8');
-                res.on('data', function (chunk) {
-                    console.log('Response: ' + chunk);
-                });
-            }
-        });
+        if(!errored) {
+            var post_data = "xmas_jam_team_registering:%BEGIN%" + message.member.user.tag + "%SPLIT%" + teammates_stringified + "%END%";
+            var post_req = http.request({
+                host: 'sv443.ddns.net',
+                port: '80',
+                path: '/mphost',
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain',
+                    'Content-Length': Buffer.byteLength(post_data)
+                },
+                function(res) {
+                    res.setEncoding('utf8');
+                    res.on('data', function (chunk) {
+                        console.log('Response: ' + chunk);
+                    });
+                }
+            });
 
-        // post the data
-        post_req.write(post_data);
-        post_req.end();
+            // post the data
+            post_req.write(post_data);
+            post_req.end();
+        }
     }
     catch(err) {
         console.log("Couldn't POST to server: " + err);
