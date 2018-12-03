@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
     let logChannel = '489605729624522762';
 
     let teamMates = message.mentions.members.first();
-    teamMates = message.member.user.tag + "%SPLIT%" + message.cleanContent.replace(/([x][p][?][ ][t][e][a][m][ ][@])|([x][p][?][t][e][a][m][ ][@])/gm, "");
+    teamMates = "%BEGIN%" + message.member.user.tag + "%SPLIT%" + message.cleanContent.replace(/([x][p][?][ ][t][e][a][m][ ][@])|([x][p][?][t][e][a][m][ ][@])/gm, "") + "%END%";
     
     console.log(message.cleanContent);
     
