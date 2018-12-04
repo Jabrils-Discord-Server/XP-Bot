@@ -31,6 +31,7 @@ exports.run = (client, message, args) => {
                 port: '80',
                 path: '/mphost',
                 method: 'POST',
+                timeout: 2000,
                 headers: {
                     'Content-Type': 'text/plain',
                     'Content-Length': Buffer.byteLength(post_data)
