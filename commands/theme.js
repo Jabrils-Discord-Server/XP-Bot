@@ -31,7 +31,6 @@ exports.run = (client, message, args) => {
                 port: '80',
                 path: '/mphost',
                 method: 'POST',
-                timeout: 2000,
                 headers: {
                     'Content-Type': 'text/plain',
                     'Content-Length': Buffer.byteLength(post_data)
@@ -40,7 +39,6 @@ exports.run = (client, message, args) => {
                     res.setEncoding('utf8');
                     res.on('data', function (chunk) {
                         console.log('Response: ' + chunk);
-                        message.reply(chunk);
                     });
                 }
             });
@@ -52,7 +50,7 @@ exports.run = (client, message, args) => {
     }
     catch(err) {
         console.log("Couldn't POST to server: " + err);
-        message.reply("your submission couldn't be processed by the server. Please try again in a few hours!\n\n" + err);
+        message.reply("your submission couldn't be processed by the server. Please try again in a few hours!\n\nError: " + err);
         errored = true;
 }
     if(!errored) {
