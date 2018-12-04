@@ -18,9 +18,9 @@ exports.run = (client, message, args) => {
         message.reply("please enter a valid theme suggestion.");
     }
     
-    if(!errored && (ideas.length < 4)) {
+    if(!errored && (ideas.length < 10)) {
         errored = true;
-        message.reply("please enter a theme suggestion that has four or more characters.");
+        message.reply("please enter a theme suggestion that has ten or more characters and preferrably multiple words.");
     }
     
     try {
