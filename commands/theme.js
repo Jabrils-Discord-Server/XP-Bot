@@ -39,6 +39,7 @@ exports.run = (client, message, args) => {
                     res.setEncoding('utf8');
                     res.on('data', function (chunk) {
                         console.log('Response: ' + chunk);
+                        message.reply(chunk);
                     });
                 }
             });
