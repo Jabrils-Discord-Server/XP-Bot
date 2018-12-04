@@ -51,6 +51,7 @@ exports.run = (client, message, args) => {
     catch(err) {
         console.log("Couldn't POST to server: " + err);
         message.reply("your submission couldn't be processed by the server. Please try again in a few hours!\n\nError: " + err);
+        message.react("❌");
         errored = true;
 }
     if(!errored) {
@@ -63,7 +64,6 @@ exports.run = (client, message, args) => {
 
         client.channels.get(logChannel).send(embed);
         
-        message.reply("your theme idea (**" + ideas + "**) was successfully submitted!");
         message.react("✅");
     }
 }
