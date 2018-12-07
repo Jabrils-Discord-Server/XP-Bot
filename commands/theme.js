@@ -3,6 +3,11 @@ const http = require('http');
 
 exports.run = (client, message, args) => {
     var errored = false;
+    if(message.author.id == "165273721454592010") {
+        errored = true;
+        message.reply("fuck you, no more theme submissions for you >:(");
+        return;
+    }
     let logChannel = '489605729624522762';
     let ideas = args.join(' ');
     
