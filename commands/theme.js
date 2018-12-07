@@ -3,6 +3,7 @@ const http = require('http');
 
 exports.run = (client, message, args) => {
     var errored = false;
+    if(args.include("%BEGIN%") || args.include("%SPLIT%") || args.include("%END%")) args = args.replace(/(%BEGIN%)/gm, "").replace(/(%SPLIT%)/gm, "").replace(/(%END%)/gm, "");
     if(message.author.id == "165273721454592010") {
         errored = true;
         message.reply("fuck you, no more theme submissions for you >:(");
