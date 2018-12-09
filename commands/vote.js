@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
 		invalid = true;
 		
 		var content = "";
-		for(let i = 0; i < themes.length; i++) content += (i + " - " + themes[i] + "\n");
+		for(let i = 0; i < themes.length; i++) content += ((i + 1) + " - " + themes[i] + "\n");
 		
 		let embed = new Discord.RichEmbed()
         .setTitle("Themes - vote with `xp? vote *number*`")
@@ -32,6 +32,7 @@ exports.run = (client, message, args) => {
 	if(!invalid) {
 		try {
 			votedfor = parseInt(input);
+			votedfor--;
 			if(votedfor > themes.length || isNaN(votedfor)) {
 				invalid = true;
 				message.reply("please only use a number from 1 to " + themes.length);
