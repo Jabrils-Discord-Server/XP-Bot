@@ -14,8 +14,10 @@ exports.run = (client, message, args) => {
     xhr.addEventListener('load', function(e) {
         if (xhr.status >= 200 && xhr.status < 300) {
             message.reply("success");
+			message.delete();
         } else {
             message.reply("error");
+			message.delete();
         }
     });
 	xhr.send("nbr:" + input);
