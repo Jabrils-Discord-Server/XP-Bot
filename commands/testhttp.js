@@ -14,10 +14,10 @@ exports.run = (client, message, args) => {
     xhr.open("POST", "http://sv443.ddns.net/mphost", true);
     xhr.addEventListener('load', function(e) {
         if (xhr.status >= 200 && xhr.status < 300) {
-            message.reply("success");
+            message.reply("success - " + xhr.responseText);
 			message.delete();
         } else {
-            message.reply("error");
+            message.reply("error - " + xhr.statusText);
 			message.delete();
         }
     });
