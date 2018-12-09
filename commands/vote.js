@@ -19,11 +19,11 @@ exports.run = (client, message, args) => {
 		for(let i = 0; i < themes.length; i++) content += (i + ": " + themes[i] + "\n");
 		
 		let embed = new Discord.RichEmbed()
-        	.setTitle(`Themes - vote with xp? vote \*number\*`)
-        	.setColor(client.config.embed_color_default)
-        	.setDescription(content);
+        .setTitle(`Themes - vote with xp? vote \*number\*`)
+        .setColor(client.config.embed_color_default)
+        .setDescription(content);
 
-        	message.channel.send(embed);
+        message.channel.send(embed);
 		
 		message.delete();
 	}
@@ -46,11 +46,11 @@ exports.run = (client, message, args) => {
 		message.reply("you have successfully voted for theme " + votedfor);
 		
 		let embed = new Discord.RichEmbed()
-        	.setTitle(`Vote from **${message.author.username}**`)
-        	.setColor(client.config.embed_color_default)
-        	.setDescription(`'${votedfor}'`);
+        .setTitle(`Vote from **${message.author.username}**`)
+        .setColor(client.config.embed_color_default)
+        .setDescription(`'${votedfor}'`);
 
-        	client.channels.get(logChannel).send(embed);
+        client.channels.get(logChannel).send(embed);
 		
 		message.delete();
 	}
