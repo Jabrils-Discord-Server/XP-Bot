@@ -14,7 +14,7 @@ exports.run = (client, message, args) => {
 	
 	try {
 		votedfor = parseInt(input);
-		if(votedfor > themes.length || votedfor == NaN || votedfor == undefined || votedfor == null || votedfor == "" || votedfor == "NaN") {
+		if(votedfor > themes.length || isNaN(votedfor)) {
 			console.log("isnan");
 			invalid = true;
 			message.reply("please only use a number from 1 to " + themes.length);
