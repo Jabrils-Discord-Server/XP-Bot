@@ -45,7 +45,7 @@ exports.run = (client, message, args) => {
 	}
   
     if(!invalid) {
-		message.reply("you have successfully voted for theme " + votedfor);
+		message.reply("you have successfully voted for theme " + (votedfor + 1));
 		
 		let embed = new Discord.RichEmbed()
         .setTitle(`Vote from **${message.author.username}**`)
