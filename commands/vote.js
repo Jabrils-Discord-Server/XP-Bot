@@ -33,7 +33,7 @@ exports.run = (client, message, args) => {
 		try {
 			votedfor = parseInt(input);
 			votedfor--;
-			if(votedfor > themes.length || isNaN(votedfor)) {
+			if((votedfor + 1) > themes.length || isNaN(votedfor)) {
 				invalid = true;
 				message.reply("please only use a number from 1 to " + themes.length);
 			}
