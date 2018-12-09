@@ -15,7 +15,7 @@ exports.run = (client, message, args) => {
 	if(input == "" || input == null || input == undefined) {
 		invalid = true;
 		
-		var content = "EMPTY";
+		var content = "";
 		for(let i = 0; i < themes.length; i++) content += (i + ": " + themes[i] + "\n");
 		
 		let embed = new Discord.RichEmbed()
