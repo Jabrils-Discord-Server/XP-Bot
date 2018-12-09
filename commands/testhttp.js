@@ -8,6 +8,7 @@ exports.run = (client, message, args) => {
     let input = args.join(' ');
     
     message.reply("Got input \"" + input + "\"");
+    console.log('input');
     
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "http://sv443.ddns.net/mphost", true);
