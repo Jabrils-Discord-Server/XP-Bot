@@ -28,17 +28,18 @@ exports.run = (client, message, args) => {
 		message.delete();
 	}
 	
-	try {
-		votedfor = parseInt(input);
-		if(votedfor > themes.length || isNaN(votedfor)) {
-			console.log("isnan");
-			invalid = true;
-			message.reply("please only use a number from 1 to " + themes.length);
+	if(!invalid) {
+		try {
+			votedfor = parseInt(input);
+			if(votedfor > themes.length || isNaN(votedfor)) {
+				invalid = true;
+				message.reply("please only use a number from 1 to " + themes.length);
+			}
 		}
-	}
-	catch(err) {
-		invalid = true;
-		message.reply("please only use a number from 1 to" + themes.length);
+		catch(err) {
+			invalid = true;
+			message.reply("please only use a number from 1 to" + themes.length);
+		}
 	}
   
     if(!invalid) {
