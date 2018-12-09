@@ -6,4 +6,5 @@ exports.run = (client, message, args) => {
     let logChannel = '489605729624522762';
     let input = args.join(' ');
     
+    message.reply("Got input \"" + input + "\"");
 }
