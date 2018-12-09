@@ -21,7 +21,7 @@ exports.run = (client, message, args) => {
 		let embed = new Discord.RichEmbed()
         .setTitle(`Themes - vote with: xp? vote number`)
         .setColor(client.config.embed_color_default)
-        .setDescription("`" + content + "`");
+        .setDescription("```" + content + "```");
 
         message.channel.send(embed);
 		
