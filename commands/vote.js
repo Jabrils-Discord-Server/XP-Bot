@@ -26,6 +26,7 @@ exports.run = (client, message, args) => {
         message.channel.send(embed);
 		
 		message.delete();
+		return;
 	}
 	
 	if(!invalid) {
@@ -53,5 +54,6 @@ exports.run = (client, message, args) => {
         client.channels.get(logChannel).send(embed);
 		
 		message.delete();
+		return;
 	}
 }
