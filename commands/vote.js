@@ -45,12 +45,12 @@ exports.run = (client, message, args) => {
 	}
   
     if(!invalid) {
-		message.reply("you have successfully voted for theme " + (votedfor + 1));
+		message.reply("you have successfully voted for theme " + (votedfor + 1) + " - " + themes[votedfor]);
 		
 		let embed = new Discord.RichEmbed()
         .setTitle(`Vote from **${message.author.username}**`)
         .setColor(client.config.embed_color_default)
-        .setDescription(`'${votedfor}'`);
+        .setDescription(`'${votedfor + 1} - ${themes[votedfor]}'`);
 
         client.channels.get(logChannel).send(embed);
 		
