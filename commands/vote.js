@@ -16,12 +16,12 @@ exports.run = (client, message, args) => {
 		invalid = true;
 		
 		var content = "";
-		for(let i = 0; i < themes.length; i++) content += (i + ": " + themes[i] + "\n");
+		for(let i = 0; i < themes.length; i++) content += (i + " - " + themes[i] + "\n");
 		
 		let embed = new Discord.RichEmbed()
-        .setTitle(`Themes - vote with xp? vote \*number\*`)
+        .setTitle(`Themes - vote with: xp? vote number`)
         .setColor(client.config.embed_color_default)
-        .setDescription(content);
+        .setDescription("`" + content + "`");
 
         message.channel.send(embed);
 		
