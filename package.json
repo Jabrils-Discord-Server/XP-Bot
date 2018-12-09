@@ -24,7 +24,8 @@
 	"license":"Apache-2.0",
 	"dependencies":{
 		"discord.js":"^11.0.0",
-    		"enmap": "^4.3.3"
+    		"enmap": "^4.3.3",
+		"xmlhttprequest": "^1.8.0"
 	},
 	"bugs":{
 		"url":""
