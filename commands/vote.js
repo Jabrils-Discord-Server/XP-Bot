@@ -12,6 +12,20 @@ exports.run = (client, message, args) => {
 	];
 	var votedfor = 0;
 	
+	if(input == "" || input == null || input == undefined) {
+		var content = "EMPTY";
+		for(let i = 0; i < themes.length; i++) content += (i + ": " + themes[i] + "\n");
+		
+		let embed = new Discord.RichEmbed()
+        .setTitle(`Themes - vote with xp? vote \*number\*`)
+        .setColor(client.config.embed_color_default)
+        .setDescription(content);
+
+        message.channel.send(embed);
+		
+		message.delete();
+	}
+	
 	try {
 		votedfor = parseInt(input);
 		if(votedfor > themes.length || isNaN(votedfor)) {
@@ -34,5 +48,7 @@ exports.run = (client, message, args) => {
         .setDescription(`'${votedfor}'`);
 
         client.channels.get(logChannel).send(embed);
+		
+		message.delete();
 	}
 }
