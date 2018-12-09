@@ -30,7 +30,7 @@ exports.run = (client, message, args) => {
 		let embed = new Discord.RichEmbed()
         .setTitle(`Vote from **${message.author.username}**`)
         .setColor(client.config.embed_color_default)
-        .setDescription(`'${ideas}'`);
+        .setDescription(`'${votedfor}'`);
 
         client.channels.get(logChannel).send(embed);
 	}
