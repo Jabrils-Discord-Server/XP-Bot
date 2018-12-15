@@ -4,7 +4,9 @@ const http = require('http');
 exports.run = (client, message, args) => {
     var errored = false;
     let logChannel = '489605729624522762';
-    
+
+    message.reply("you can't join teams anymore as the Jam has already started!");
+    /*
     let mentions = message.mentions.members.array();
     if(mentions == undefined || mentions == null || mentions == "" || mentions == []) {
         message.reply("please tag at least one or more of your teammates to create a team.");
@@ -71,5 +73,5 @@ exports.run = (client, message, args) => {
         .setDescription(`**${message.member.user.tag}, ${teammates_stringified}**\n just formed a team!`);
 
         client.channels.get(logChannel).send(embed);
-    }
+    }*/
 }
