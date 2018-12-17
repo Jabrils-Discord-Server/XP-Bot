@@ -6,6 +6,8 @@ const client = new Discord.Client();
 const config = require("./config.json");
 client.config = config;
 
+const logChannel = "489605729624522762";
+
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
@@ -29,3 +31,9 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 client.login(process.env.TOKEN);
+
+let embed = new Discord.RichEmbed()
+        .setTitle('I just redeployed!')
+        .setColor(client.config.embed_color_default)
+        .setDescription(new Date());
+client.channels.get(logChannel).send(embed);
