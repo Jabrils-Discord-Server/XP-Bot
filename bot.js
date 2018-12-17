@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const Enmap = require("enmap");
-const fs = require("fs");
+const fs = require("fs"); 
 
 const client = new Discord.Client();
 const config = require("./config.json");
@@ -34,7 +34,7 @@ client.login(process.env.TOKEN);
 
 client.on("ready", ()=>{
     let embed = new Discord.RichEmbed()
-        .setTitle('I just redeployed!')
+        .setTitle('I just redeployed')
         .setColor(client.config.embed_color_default)
         .setDescription(new Date());
     client.channels.get(logChannel).send(embed);
