@@ -1,3 +1,5 @@
+const Discord = require('discord.js')
+
 const logChannel = "489605729624522762";
 
 module.exports = (client) => {
