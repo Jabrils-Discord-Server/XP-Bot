@@ -34,7 +34,7 @@ client.login(process.env.TOKEN);
 
 client.on("ready", ()=>{
     let embed = new Discord.RichEmbed()
-        .setTitle('I just redeployed')
+        .setTitle('I just redeployed!')
         .setColor(client.config.embed_color_default)
         .setDescription(new Date());
     client.channels.get(logChannel).send(embed);
