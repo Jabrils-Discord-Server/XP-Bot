@@ -32,8 +32,10 @@ fs.readdir("./commands/", (err, files) => {
 
 client.login(process.env.TOKEN);
 
-let embed = new Discord.RichEmbed()
+client.on("ready", ()=>{
+    let embed = new Discord.RichEmbed()
         .setTitle('I just redeployed!')
         .setColor(client.config.embed_color_default)
         .setDescription(new Date());
-client.channels.get(logChannel).send(embed);
+    client.channels.get(logChannel).send(embed);
+});
