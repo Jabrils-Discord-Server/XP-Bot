@@ -9,7 +9,7 @@ module.exports = (client) => {
         .setTitle('I just redeployed!')
         .setColor(client.config.embed_color_default)
         .setTimestamp()
-        .setDescription(`/*${new Date()}*/\nServing in ${client.channels.size} channels on ${client.guilds.size} servers for a total of ${client.users.size} users.`);
+        .setDescription(`Serving in ${client.channels.size} channels on ${client.guilds.size} servers for a total of ${client.users.size} users.`);
     client.channels.get(logChannel).send(embed)
         
     
