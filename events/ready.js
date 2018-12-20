@@ -10,6 +10,7 @@ module.exports = (client) => {
         .setColor(client.config.embed_color_default)
         .setDescription(`${new Date()}\nServing in ${client.channels.size} channels on ${client.guilds.size} servers for a total of ${client.users.size} users.`);
     client.channels.get(logChannel).send(embed);
+        .setTimestamp()
     
     client.user.setActivity(`y'all fail at the Jam`, { type: 'WATCHING' });
 }
