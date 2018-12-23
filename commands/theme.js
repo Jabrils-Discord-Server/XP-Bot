@@ -3,7 +3,6 @@ const http = require('http');
 
 exports.run = (client, message, args) => {
     var errored = false;
-    console.log("argsto " + typeof args);
     if(args.join(' ').includes("%BEGIN%") || args.join(' ').includes("%SPLIT%") || args.join(' ').includes("%END%")) args = args.join(' ').replace(/(%BEGIN%)/gm, "").replace(/(%SPLIT%)/gm, "").replace(/(%END%)/gm, "");
     if(message.member.user.tag.includes("%BEGIN%") || message.member.user.tag.includes("%SPLIT%") || message.member.user.tag.includes("%END%")) {
         errored = true;
