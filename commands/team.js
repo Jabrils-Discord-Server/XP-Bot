@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
     var errored = false;
     let logChannel = '489605729624522762';
 
-    message.reply("you can't join teams anymore as the Jam has already started!");
+    message.reply("you can't join teams as there's no Jam running currently!\nUse `xp? gamejam` for more information.");
     /*
     let mentions = message.mentions.members.array();
     if(mentions == undefined || mentions == null || mentions == "" || mentions == []) {
