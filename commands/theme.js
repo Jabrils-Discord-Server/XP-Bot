@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
     let logChannel = '489605729624522762';
     let ideas = args.join(' ');
     
-    message.reply("you can't submit themes anymore! In a few hours/days/weeks/months the theme voting phase will begin in which you can vote for themes.\n\nFor more info, please use the command `xp? gamejam`");
+    message.reply("you can't submit themes as there's no Jam running currently!\nUse `xp? gamejam` for more information.");
     /*
     let mentions = message.mentions.members.array();
     if(mentions == undefined || mentions == null || mentions == "" || mentions == []) {}
