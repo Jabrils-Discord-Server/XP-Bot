@@ -21,6 +21,8 @@ exports.run = async (client, message, args) => {
     .setFooter(`Inspired by Tiny Rick Bot`);
 
     message.channel.send(embed);
+    
+    message.delete();
 
     // If we want the bot to ping the victim as well
     //if(args.join(" ").includes(`@`))
