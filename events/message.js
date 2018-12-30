@@ -18,7 +18,7 @@ module.exports = (client, message) => {
     let owolist = ["owo", "uwu", "ywy", "0w0", "3w3", "øwø", "ôwô", "õwõ", "OuO", "OwO", "UwU"]
     owolist.forEach(x => {
            if(message.content.includes(x)) {
-               message.delete()
+               return message.delete()
             }
     })
   };
