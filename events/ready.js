@@ -6,7 +6,7 @@ module.exports = (client) => {
     console.log(`Ready to serve in ${client.channels.size} channels on ${client.guilds.size} servers, for a total of ${client.users.size} users.`);
 
     let embed = new Discord.RichEmbed()
-        .setTitle('@everyone is ghey!')
+        .setTitle('Everyone is ghey!')
         .setColor(client.config.embed_color_default)
         .setTimestamp()
         .setDescription(`Serving in ${client.channels.size} channels on ${client.guilds.size} servers for a total of ${client.users.size} users.`);
