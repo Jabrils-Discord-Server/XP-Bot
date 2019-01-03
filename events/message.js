@@ -1,5 +1,5 @@
 module.exports = (client, message) => {
-    if(message.content.toString().toLowerCase().includes("xd")) return message.delete();
+    if(message.content.toString().replace(/\s*/gm, "").toLowerCase().includes("xd")) return message.delete();
     if (message.author.bot) return;
   
     if (message.content.indexOf(client.config.prefix) !== 0) return;
