@@ -15,7 +15,7 @@ module.exports = (client, message) => {
     })
     */
     
-    if(message.content.toLowerCase().includes("xd")) return message.delete();
+    if(message.content.toString().toLowerCase().includes("xd")) return message.delete();
     
     const cmd = client.commands.get(command);
   
