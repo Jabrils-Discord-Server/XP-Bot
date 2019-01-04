@@ -1,6 +1,7 @@
 module.exports = (client, message) => {
     if(message.content.toString().replace(/\s*/gm, "").toLowerCase().includes("xd")) message.react("493187615659393025");//return message.delete();
     if(message.content.toString().toLowerCase().includes("squint") || message.content.toString().toLowerCase().includes("cough")) message.react("492785060869832706");
+    if(message.content.toString().toLowerCase().includes("indoo") || message.content.toString().toLowerCase().includes("indede")) message.react("522675592747810826");
     if (message.author.bot) return;
   
     if (message.content.indexOf(client.config.prefix) !== 0) return;
