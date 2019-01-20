@@ -7,7 +7,7 @@ module.exports = (client, message) => {
     if (message.author.bot) return;
     if(message.content.toString().toLowerCase().match(/(arch[^\w])|(arch$)/gm)) {
         let arches = ["I use arch btw", "btw I use arch", "btw did I tell you I use arch?", "also just so you know, I use arch"];
-        message.reply(arches[Math.round(Math.random()) * arches.length]);
+        message.reply(arches[Math.floor(Math.random()) * arches.length]);
     }
   
     if (message.content.indexOf(client.config.prefix) !== 0) return;
