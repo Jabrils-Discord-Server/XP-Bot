@@ -5,7 +5,7 @@ module.exports = (client, message) => {
     if(message.content.toString().toLowerCase().includes("lurk") && message.author.id != '427491040468140043') message.react("500645964835717120");
     
     if (message.author.bot) return;
-    if(message.content.toString().toLowerCase().match(/(arch[^\w])|(arch$)/gm)) {
+    if(message.content.toString().toLowerCase().match(/(\sarch[^\w])|(\sarch$)/gm)) {
         let arches = ["I use arch btw", "btw I use arch", "btw did I tell you I use arch?", "also just so you know, I use arch"];
         message.reply(arches[Math.floor(Math.random() * arches.length)]);
     }
