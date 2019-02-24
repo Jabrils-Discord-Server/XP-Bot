@@ -1,7 +1,8 @@
 const Discord = require("discord.js");
 
 exports.run = async (client, message, args) => {
-    var sayInChannel, sendMsg;
+    message.reply(message.member.permissions.has("MANAGE_MESSAGES") + " - " + message.content + " - " + args);
+    /*var sayInChannel, sendMsg;
 
     if(args == null) return message.delete();
     if(args.split(" ")[0].split("")[0] == "<" && args.split(" ")[0].split("")[1] == "#") {
@@ -29,5 +30,5 @@ exports.run = async (client, message, args) => {
             }
         }
     }
-    else return message.reply("you don't have enough permissions to do that!");
+    else return message.reply("you don't have enough permissions to do that!");*/
 }
