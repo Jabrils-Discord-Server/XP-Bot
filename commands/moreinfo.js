@@ -15,6 +15,9 @@ exports.run = async (client, message, args) => {
     let embed = new Discord.RichEmbed()
     .setTitle("Please provide more information!")
     .setDescription(chosenResponse)
+    .addBlankField()
+    .addField("Please make sure your question contains the following:", "- A code snippet\n\n- The programming language of that snippet\n\n- A good and in-depth explanation what you want to achieve with that code and what went wrong")
+    .setFooter("Thank you - Your mod team")
     .setColor(client.config.embed_color_default);
 
     message.channel.send(embed);
