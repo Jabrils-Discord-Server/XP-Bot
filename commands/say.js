@@ -33,3 +33,4 @@ exports.run = async (client, message, args) => {
         }
     }
     else return message.reply("you don't have enough permissions to do that!");
+}
