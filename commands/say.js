@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 exports.run = async (client, message, args) => {
     if(message.member.permissions.has("MANAGE_MESSAGES")) {
         message.delete().then(m=>{
+            message.reply(args);
             return message.channel.send(args);
         });
     }
