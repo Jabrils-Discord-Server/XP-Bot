@@ -13,5 +13,5 @@ module.exports = (client) => {
     client.channels.get(logChannel).send(embed)
         
     
-    client.user.setActivity(`y'all fail at the Jam`, { type: 'WATCHING' });
+    client.user.setActivity(`Noboruu shower`, { type: 'WATCHING' });
 }
