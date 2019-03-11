@@ -22,6 +22,6 @@ module.exports = (client) => {
     // client.user.setActivity(`Noboruu shower`, { type: 'WATCHING' });
 }
 
-Array.prototype.random() {
+Array.prototype.random = function() {
  return this[Math.floor((Math.random()*this.length))];   
 }
