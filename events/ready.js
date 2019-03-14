@@ -17,7 +17,7 @@ module.exports = (client) => {
     client.user.setActivity(`${actarr.random()}`, {type: 'WATCHING'})
     
     setInterval(() => {
-        client.user.setActivity(`${actarr.random}`, {type: 'WATCHING'})
+        client.user.setActivity(`${actarr.random()}`, {type: 'WATCHING'})
     }, 1000 * 60 * 3)
     // client.user.setActivity(`Noboruu shower`, { type: 'WATCHING' });
 }
