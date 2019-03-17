@@ -12,7 +12,12 @@ module.exports = (client) => {
         .setDescription(`Serving in ${client.channels.size} channels on ${client.guilds.size} servers for a total of ${client.users.size} users.`);
     client.channels.get(logChannel).send(embed)
        
-    let actarr = ['Noburuu shower', 'Gabe suck a fat dicc', 'Sv be super gay', 'canny is the best uwu', 'fuck all mods but ceni',' canarado best arbiter']
+    let actarr = [
+        'Noburuu shower uwu',
+        'Gabe succ a fat dicc',
+        'Sv be a ghey furry',
+        'Canny be the worst mod'
+    ];
     
     client.user.setActivity(`${actarr.random()}`, {type: 'WATCHING'})
     
