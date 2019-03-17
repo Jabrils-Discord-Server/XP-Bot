@@ -5,7 +5,7 @@ module.exports = (client, message) => {
         if(message.content.toString().toLowerCase().includes("squint") || message.content.toString().toLowerCase().includes("cough") && message.author.id != '427491040468140043') message.react("492785060869832706");
         if(message.content.toString().toLowerCase().includes("indoo") || message.content.toString().toLowerCase().includes("indede") && message.author.id != '427491040468140043') message.react("522675592747810826");
         if(message.content.toString().toLowerCase().includes("lurk") && message.author.id != '427491040468140043') message.react("500645964835717120");
-        if(message.content.toString().toLowerCase().includes("bruh moment")) message.reply("https://youtu.be/V263ad2e2uk");
+        if(message.content.toString().toLowerCase().includes("bruh moment") && message.author.id != "427491040468140043") message.reply("https://youtu.be/V263ad2e2uk");
     }
     catch(err) {
         console.log(`Error: ${err}`);   
