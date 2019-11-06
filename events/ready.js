@@ -16,7 +16,8 @@ module.exports = (client) => {
         'Noburuu shower uwu',
         'Gabe succ a fat dicc',
         'Sv be a ghey furry',
-        'Canny be the worst mod'
+        'Canny be the worst mod',
+        'The mods periodically leave'
     ];
     
     client.user.setActivity(`${actarr.random()}`, {type: 'WATCHING'})
