@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 module.exports = (client, message) => {
+    /*
     try {
         if(message.content.toString().replace(/\s*/gm, "").toLowerCase().includes("xd") && message.author.id != '427491040468140043') message.react("493187615659393025");//return message.delete();
         if(message.content.toString().toLowerCase().includes("squint") || message.content.toString().toLowerCase().includes("cough") && message.author.id != '427491040468140043') message.react("492785060869832706");
@@ -10,6 +11,7 @@ module.exports = (client, message) => {
     catch(err) {
         console.log(`Error: ${err}`);   
     }
+    */
     
     if (message.author.bot) return;
     if(message.content.toString().toLowerCase().match(/(\sarch[^\w])|(\sarch$)|(^arch$)|(^arch\s)/gm)) {
