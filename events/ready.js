@@ -13,11 +13,13 @@ module.exports = (client) => {
     client.channels.get(logChannel).send(embed)
        
     let actarr = [
-        'Noburuu shower uwu',
         'Gabe succ a fat dicc',
         'Sv be a ghey furry',
         'Canny be the worst mod',
-        'The mods periodically leave'
+        'The mods periodically leave',
+        'Print be a stinky brit',
+        'Copy shower uwu',
+        'the community die'
     ];
     
     client.user.setActivity(`${actarr.random()}`, {type: 'WATCHING'})
