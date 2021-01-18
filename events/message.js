@@ -1,10 +1,11 @@
 const Discord = require("discord.js");
 module.exports = (client, message) => {
-    
+    let messageContent = message.content.toString().toLowerCase();
     try {
         // if(message.content.toString().replace(/\s*/gm, "").toLowerCase().includes("xd") && message.author.id != '427491040468140043') message.react("493187615659393025");//return message.delete();
         // if(message.content.toString().toLowerCase().includes("squint") || message.content.toString().toLowerCase().includes("cough") && message.author.id != '427491040468140043') message.react("492785060869832706");
-        if(message.content.toString().toLowerCase().includes("indoo") || message.content.toString().toLowerCase().includes("indede") && message.author.id != '427491040468140043') message.react("522675592747810826");
+        if(messageContent.match(/indood/gm) || messageContent.includes("indede") && message.author.id != '427491040468140043')
+            message.react("522675592747810826");
         // if(message.content.toString().toLowerCase().includes("lurk") && message.author.id != '427491040468140043') message.react("500645964835717120");
         // if(message.content.toString().toLowerCase().includes("bruh moment") && message.author.id != "427491040468140043") message.reply("https://youtu.be/V263ad2e2uk");
     }
