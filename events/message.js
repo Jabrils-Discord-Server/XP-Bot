@@ -9,12 +9,7 @@ module.exports = (client, message) => {
         if((messageContent == "tea" || messageContent.match(/\s?tea\s+/) || messageContent.match(/\s+tea\s?/))
            || (messageContent == "biscuit" || messageContent == "biscuits" || messageContent.match(/\s?biscuits?\s+/) || messageContent.match(/\s+biscuits?\s?/))
         {
-            message.react("🇧")
-            .then(() => message.react("🇷")
-                  .then(() => message.react("🇮")
-                        .then(() => message.react("🇹"))
-                  )
-            );
+            recursiveReact(message, [":regional_indicator_b:", ":regional_indicator_r:", ":regional_indicator_i:", ":regional_indicator_t:"]);
         }
         // if(message.content.toString().toLowerCase().includes("lurk") && message.author.id != '427491040468140043') message.react("500645964835717120");
         // if(message.content.toString().toLowerCase().includes("bruh moment") && message.author.id != "427491040468140043") message.reply("https://youtu.be/V263ad2e2uk");
@@ -50,3 +45,17 @@ module.exports = (client, message) => {
 
     cmd.run(client, message, args);
   };
+
+
+function recursiveReact(msg, reacts, idx)
+{
+    if(idx == undefined)
+        idx = 0;
+
+    if(idx == reactions.length)
+        return;
+
+    msg.react(reactions[idx]).then(() => {
+        react(msg, reacts, (idx + 1));
+    });
+}
